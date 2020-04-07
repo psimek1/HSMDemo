@@ -4,11 +4,23 @@ namespace DemoApp.ThingsOnShelfGame
 {
     public class ThingsOnShelfGameTaskState: HSMState
     {
-        public ThingsOnShelfGameTaskState() : base()
+
+        private InitState initState;
+        
+        public ThingsOnShelfGameTaskState()
         {
 
             this.name = "ThingsOnShelfGameTask";
             
+            AddChildState(this.initState = new InitState());
+            
+        }
+
+        public override void OnStateEnter()
+        {
+            base.OnStateEnter();
+            
+            SwitchState(this.initState);
         }
     }
 }

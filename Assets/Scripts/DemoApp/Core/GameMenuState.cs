@@ -4,7 +4,7 @@ namespace DemoApp.Core
 {
     public class GameMenuState: HSMState
     {
-        public GameMenuState() : base()
+        public GameMenuState()
         {
             this.name = "GameMenu";
         }

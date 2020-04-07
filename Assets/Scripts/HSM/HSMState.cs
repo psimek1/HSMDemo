@@ -17,7 +17,7 @@ namespace HSM
                 this.manager = value;
                 foreach (var childState in childStates)
                 {
-                    childState.manager = value;
+                    childState.Manager = value;
                 }
             }
         }

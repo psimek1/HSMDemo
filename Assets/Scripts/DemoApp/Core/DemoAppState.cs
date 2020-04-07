@@ -1,9 +1,19 @@
-﻿using System;
-using DemoApp.Core.Actions;
+﻿using DemoApp.Core.Actions;
 using HSM;
 
 namespace DemoApp.Core
 {
+    
+    /**
+     * Interface pro top-level model, obsahuje nejobecnější věci, dostupné kdykoliv
+     */
+    public interface IDemoApp
+    {
+        
+        string UserNick { get; }
+        
+    }
+    
     /*
      * Top-level stav demo aplikace
      */
@@ -27,8 +37,18 @@ namespace DemoApp.Core
         public override void OnStateEnter()
         {
             base.OnStateEnter();
-            SwitchState(this.menuState);
-            CreateAction<HomeAction>().Dispatch();
+            SwitchState(this.gameState);
+        }
+
+        public override void HandleAction(HSMAction action)
+        {
+            base.HandleAction(action);
+
+            if (action is PlayMouseSpeechAction)
+            {
+                // todo přehrát hlas myšáka a po skončení zavolat:
+                CreateAction<MouseSpeechFinishedAction>().WithSpeechId(((PlayMouseSpeechAction) action).SpeechId).Dispatch();
+            }
         }
     }
 }

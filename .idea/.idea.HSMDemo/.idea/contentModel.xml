@@ -10,19 +10,20 @@
           <e p="DemoApp" t="Include">
             <e p="Core" t="Include">
               <e p="Actions" t="Include">
-                <e p="HomeAction.cs" t="Include" />
+                <e p="MouseSpeechActions.cs" t="Include" />
               </e>
               <e p="DemoAppState.cs" t="Include" />
               <e p="GameMenuState.cs" t="Include" />
               <e p="GameState.cs" t="Include" />
               <e p="GameTaskState.cs" t="Include" />
-              <e p="IDemoApp.cs" t="Include" />
               <e p="MenuState.cs" t="Include" />
               <e p="View" t="Include">
                 <e p="Test.cs" t="Include" />
               </e>
             </e>
             <e p="ThingsOnShelfGame" t="Include">
+              <e p="Actions.cs" t="Include" />
+              <e p="InitState.cs" t="Include" />
               <e p="ThingsOnShelfGameTaskState.cs" t="Include" />
             </e>
           </e>
