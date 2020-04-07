@@ -14,10 +14,15 @@ namespace HSM
 
         private bool isStateTransition;
 
-        public HSMManager(HSMState rootState)
+        private HSMViewRoot viewRoot;
+
+        public HSMManager(HSMState rootState, HSMViewRoot viewRoot)
         {
             this.rootState = rootState;
             this.rootState.Manager = this;
+
+            this.viewRoot = viewRoot;
+            
             this.actionQueue = new Queue<HSMAction>();
         }
 
@@ -59,6 +64,11 @@ namespace HSM
         public T GetModel<T>() where T : class
         {
             return this.currentState?.GetModel<T>();
+        }
+        
+        public void ForEachViewComponent<T>(Action<T> action) where T: class
+        {
+            this.viewRoot.ForEachViewComponent(action);
         }
 
         private void ProcessActionQueue()

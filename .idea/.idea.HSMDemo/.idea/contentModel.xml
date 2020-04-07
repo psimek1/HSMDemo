@@ -18,13 +18,18 @@
               <e p="GameTaskState.cs" t="Include" />
               <e p="MenuState.cs" t="Include" />
               <e p="View" t="Include">
-                <e p="Test.cs" t="Include" />
+                <e p="DemoAppViewRoot.cs" t="Include" />
               </e>
             </e>
             <e p="ThingsOnShelfGame" t="Include">
               <e p="Actions.cs" t="Include" />
               <e p="InitState.cs" t="Include" />
+              <e p="InputState.cs" t="Include" />
               <e p="ThingsOnShelfGameTaskState.cs" t="Include" />
+              <e p="View" t="Include">
+                <e p="ThingsView.cs" t="Include" />
+                <e p="ThingView.cs" t="Include" />
+              </e>
             </e>
           </e>
           <e p="HSM" t="Include">
@@ -32,6 +37,7 @@
             <e p="HSMManager.cs" t="Include" />
             <e p="HSMState.cs" t="Include" />
             <e p="HSMViewComponent.cs" t="Include" />
+            <e p="HSMViewRoot.cs" t="Include" />
             <e p="IHSMStateChangeListener.cs" t="Include" />
           </e>
           <e p="Temp" t="Include">

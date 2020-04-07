@@ -91,6 +91,11 @@ namespace HSM
         {
             return this.manager.CreateAction<TAction>();
         }
+        
+        public void ForEachViewComponent<T>(Action<T> action) where T: class
+        {
+            this.manager.ForEachViewComponent(action);
+        }
 
         public virtual void OnStateEnter()
         {
