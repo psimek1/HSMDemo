@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\pavel\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\pavel\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_HSMDemo.-763814654.00" t="ExcludeRecursive" />
+    <e p="D:\HSMDemo" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="DemoApp" t="Include">
+            <e p="Core" t="Include">
+              <e p="Actions" t="Include">
+                <e p="HomeAction.cs" t="Include" />
+              </e>
+              <e p="DemoAppState.cs" t="Include" />
+              <e p="GameMenuState.cs" t="Include" />
+              <e p="GameState.cs" t="Include" />
+              <e p="GameTaskState.cs" t="Include" />
+              <e p="IDemoApp.cs" t="Include" />
+              <e p="MenuState.cs" t="Include" />
+              <e p="View" t="Include">
+                <e p="Test.cs" t="Include" />
+              </e>
+            </e>
+            <e p="ThingsOnShelfGame" t="Include">
+              <e p="ThingsOnShelfGameTaskState.cs" t="Include" />
+            </e>
+          </e>
+          <e p="HSM" t="Include">
+            <e p="HSMAction.cs" t="Include" />
+            <e p="HSMManager.cs" t="Include" />
+            <e p="HSMState.cs" t="Include" />
+            <e p="HSMViewComponent.cs" t="Include" />
+            <e p="IHSMStateChangeListener.cs" t="Include" />
+          </e>
+          <e p="Temp" t="Include">
+            <e p="AsyncCallQueue.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="HSMDemo.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
