@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace HSM
 {
@@ -42,8 +43,8 @@ namespace HSM
                     s.OnStateExit();
                     s = s.ParentState;
                 }
-                state.OnStateEnter();
                 this.currentState = state;
+                state.OnStateEnter();
                 this.isStateTransition = false;
                 ProcessActionQueue();
             }

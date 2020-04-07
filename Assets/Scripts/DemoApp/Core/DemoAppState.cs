@@ -1,4 +1,5 @@
 ﻿using DemoApp.Core.Actions;
+using DemoApp.Core.View;
 using HSM;
 
 namespace DemoApp.Core
@@ -46,8 +47,7 @@ namespace DemoApp.Core
 
             if (action is PlayMouseSpeechAction)
             {
-                // todo přehrát hlas myšáka a po skončení zavolat:
-                CreateAction<MouseSpeechFinishedAction>().WithSpeechId(((PlayMouseSpeechAction) action).SpeechId).Dispatch();
+                ForEachViewComponent<IPlayMouseSpeech>(c => c.PlayMouseSpeech((action as PlayMouseSpeechAction).SpeechId));
             }
         }
     }

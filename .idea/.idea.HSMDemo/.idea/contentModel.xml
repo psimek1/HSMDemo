@@ -19,6 +19,8 @@
               <e p="MenuState.cs" t="Include" />
               <e p="View" t="Include">
                 <e p="DemoAppViewRoot.cs" t="Include" />
+                <e p="MouseCharacterView.cs" t="Include" />
+                <e p="ViewInterfaces.cs" t="Include" />
               </e>
             </e>
             <e p="ThingsOnShelfGame" t="Include">
