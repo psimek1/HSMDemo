@@ -4,4 +4,16 @@
     {
         void InitTask(ThingsSet thingsSet);
     }
+
+    public interface IEnableInput
+    {
+        void EnableInput();
+    }
+    
+    public interface IDisableInput
+    {
+        void DisableInput();
+    }
+
+    
 }

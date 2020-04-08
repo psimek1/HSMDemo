@@ -10,17 +10,16 @@
             set => hsmManager = value;
         }
 
-        private bool handled;
-
-        public bool Handled
-        {
-            get => this.handled;
-            set => this.handled = value;
-        }
+        public bool Handled { get; private set; }
 
         public void Dispatch()
         {
             this.hsmManager.DispatchAction(this);
+        }
+
+        public void SetHandled()
+        {
+            this.Handled = true;
         }
         
     }

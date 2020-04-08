@@ -17,6 +17,8 @@ namespace DemoApp.ThingsOnShelfGame.States
         public ThingsSet ThingsSet { get; private set; }
         
         private InitState initState;
+        private InputState inputState;
+        
         
         public ThingsOnShelfGameTaskState()
         {
@@ -24,6 +26,7 @@ namespace DemoApp.ThingsOnShelfGame.States
             this.name = "ThingsOnShelfGameTask";
             
             AddChildState(this.initState = new InitState());
+            AddChildState(this.inputState = new InputState());
             
         }
 
@@ -37,6 +40,16 @@ namespace DemoApp.ThingsOnShelfGame.States
             SwitchState(this.initState);
         }
 
+        public override void HandleAction(HSMAction action)
+        {
+            base.HandleAction(action);
+
+            if (action is TaskReadyAction)
+            {
+                SwitchState(this.inputState);
+                action.SetHandled();
+            }
+        }
         
     }
 }

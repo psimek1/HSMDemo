@@ -43,7 +43,7 @@ namespace DemoApp.ThingsOnShelfGame.States
             
                 // ... a pokud myšák mluví, počkáme, až domluví (MouseSpeechFinishedAction)
                 
-                action.Handled = true;
+                action.SetHandled();
             }
             
             else if (action is MouseSpeechFinishedAction)
@@ -53,7 +53,7 @@ namespace DemoApp.ThingsOnShelfGame.States
                     CreateAction<TaskReadyAction>().Dispatch();
                 }
 
-                action.Handled = true;
+                action.SetHandled();
             }
         }
     }
