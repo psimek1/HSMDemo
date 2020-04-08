@@ -2,7 +2,7 @@
 using DemoApp.Core.View;
 using HSM;
 
-namespace DemoApp.Core
+namespace DemoApp.Core.States
 {
     
     /**
@@ -13,6 +13,8 @@ namespace DemoApp.Core
         
         string UserNick { get; }
         
+        Game CurrentGame { get; }
+        
     }
     
     /*
@@ -20,7 +22,9 @@ namespace DemoApp.Core
      */
     public class DemoAppState: HSMState, IDemoApp
     {
-        public string UserNick { get; private set; }
+        public string UserNick { get; }
+        
+        public Game CurrentGame { get; private set; }
 
         private readonly MenuState menuState;
         private readonly GameState gameState;
@@ -30,7 +34,7 @@ namespace DemoApp.Core
             this.name = "DemoApp";
             
             this.UserNick = "DemoUser";
-            
+
             AddChildState(this.menuState = new MenuState());
             AddChildState(this.gameState = new GameState());
         }
@@ -38,6 +42,11 @@ namespace DemoApp.Core
         public override void OnStateEnter()
         {
             base.OnStateEnter();
+            
+            // v tomto demu přeskakujeme menu a jdeme rovnou do hry:
+            
+            this.CurrentGame = Game.ThingsOnShelfGame;
+            
             SwitchState(this.gameState);
         }
 

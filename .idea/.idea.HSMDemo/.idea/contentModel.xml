@@ -12,25 +12,35 @@
               <e p="Actions" t="Include">
                 <e p="MouseSpeechActions.cs" t="Include" />
               </e>
-              <e p="DemoAppState.cs" t="Include" />
-              <e p="GameMenuState.cs" t="Include" />
-              <e p="GameState.cs" t="Include" />
-              <e p="GameTaskState.cs" t="Include" />
-              <e p="MenuState.cs" t="Include" />
+              <e p="Game.cs" t="Include" />
+              <e p="States" t="Include">
+                <e p="DemoAppState.cs" t="Include" />
+                <e p="GameMenuState.cs" t="Include" />
+                <e p="GameState.cs" t="Include" />
+                <e p="GameTaskState.cs" t="Include" />
+                <e p="MenuState.cs" t="Include" />
+              </e>
               <e p="View" t="Include">
                 <e p="DemoAppViewRoot.cs" t="Include" />
+                <e p="GameView.cs" t="Include" />
                 <e p="MouseCharacterView.cs" t="Include" />
                 <e p="ViewInterfaces.cs" t="Include" />
               </e>
             </e>
             <e p="ThingsOnShelfGame" t="Include">
-              <e p="Actions.cs" t="Include" />
-              <e p="InitState.cs" t="Include" />
-              <e p="InputState.cs" t="Include" />
-              <e p="ThingsOnShelfGameTaskState.cs" t="Include" />
+              <e p="Actions" t="Include">
+                <e p="Actions.cs" t="Include" />
+              </e>
+              <e p="States" t="Include">
+                <e p="InitState.cs" t="Include" />
+                <e p="InputState.cs" t="Include" />
+                <e p="ThingsOnShelfGameTaskState.cs" t="Include" />
+              </e>
+              <e p="ThingsSet.cs" t="Include" />
               <e p="View" t="Include">
                 <e p="ThingsView.cs" t="Include" />
                 <e p="ThingView.cs" t="Include" />
+                <e p="ViewInterfaces.cs" t="Include" />
               </e>
             </e>
           </e>
@@ -40,9 +50,8 @@
             <e p="HSMState.cs" t="Include" />
             <e p="HSMViewComponent.cs" t="Include" />
             <e p="HSMViewRoot.cs" t="Include" />
-            <e p="IHSMStateChangeListener.cs" t="Include" />
           </e>
-          <e p="Temp" t="Include">
+          <e p="Utils" t="Include">
             <e p="AsyncCallQueue.cs" t="Include" />
           </e>
         </e>

@@ -2,18 +2,13 @@
 
 namespace DemoApp.ThingsOnShelfGame.View
 {
-    public class ThingsView : HSMViewComponent
+    public class ThingsView : HSMViewComponent, IInitTask
     {
-        // Start is called before the first frame update
-        void Start()
+        public void InitTask(ThingsSet thingsSet)
         {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
+            // todo
+            
+            CreateAction<TaskViewReadyAction>().Dispatch();
         }
     }
 }

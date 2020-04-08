@@ -1,6 +1,6 @@
 ﻿using HSM;
 
-namespace DemoApp.Core
+namespace DemoApp.Core.States
 {
     public class MenuState: HSMState
     {

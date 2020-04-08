@@ -2,6 +2,11 @@
 
 namespace DemoApp.ThingsOnShelfGame
 {
+
+    public class TaskViewReadyAction : HSMAction
+    {
+        
+    }
     
     public class TaskReadyAction: HSMAction
     {

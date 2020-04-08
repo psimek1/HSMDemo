@@ -1,7 +1,8 @@
 ﻿using DemoApp.ThingsOnShelfGame;
+using DemoApp.ThingsOnShelfGame.States;
 using HSM;
 
-namespace DemoApp.Core
+namespace DemoApp.Core.States
 {
     public class GameTaskState: HSMState
     {
