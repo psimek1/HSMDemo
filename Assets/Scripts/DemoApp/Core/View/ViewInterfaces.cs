@@ -1,4 +1,6 @@
-﻿namespace DemoApp.Core.View
+﻿using DemoApp.Core.Data;
+
+namespace DemoApp.Core.View
 {
     public interface IInitGame
     {
@@ -7,7 +9,7 @@
     
     public interface IPlayMouseSpeech
     {
-        void PlayMouseSpeech(string speechId);
+        void PlayMouseSpeech(MouseSpeech speech);
     }
     
 }

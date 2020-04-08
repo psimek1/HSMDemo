@@ -1,4 +1,6 @@
-﻿namespace DemoApp.ThingsOnShelfGame.View
+﻿using HSM;
+
+namespace DemoApp.ThingsOnShelfGame.View
 {
     public interface IInitTask
     {
@@ -14,6 +16,4 @@
     {
         void DisableInput();
     }
-
-    
 }

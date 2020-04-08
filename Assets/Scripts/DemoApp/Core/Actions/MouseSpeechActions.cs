@@ -1,4 +1,5 @@
-﻿using HSM;
+﻿using DemoApp.Core.Data;
+using HSM;
 
 namespace DemoApp.Core.Actions
 {
@@ -6,13 +7,13 @@ namespace DemoApp.Core.Actions
     public abstract class MouseSpeechAction: HSMAction
     {
 
-        private string speechId;
+        private MouseSpeech speech;
 
-        public string SpeechId => speechId;
+        public MouseSpeech Speech => speech;
 
-        public MouseSpeechAction WithSpeechId(string value)
+        public MouseSpeechAction WithSpeech(MouseSpeech value)
         {
-            this.speechId = value;
+            this.speech = value;
             return this;
         }
         

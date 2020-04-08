@@ -1,4 +1,5 @@
 ﻿using DemoApp.Core.Actions;
+using DemoApp.Core.Data;
 using DemoApp.Core.States;
 using DemoApp.ThingsOnShelfGame.View;
 using HSM;
@@ -7,9 +8,14 @@ namespace DemoApp.ThingsOnShelfGame.States
 {
     public class InitState: HSMState
     {
+
+        private MouseSpeech introSpeech;
+        
         public InitState()
         {
             this.name = "Init";
+            
+            this.introSpeech = new MouseSpeech("Dokážeš najít předmět, který nepatří mezi ostatní?");
         }
         
         public override void OnStateEnter()
@@ -34,7 +40,7 @@ namespace DemoApp.ThingsOnShelfGame.States
 
                 if (GetModel<IGame>().IsFirstTask)
                 {
-                    CreateAction<PlayMouseSpeechAction>().WithSpeechId("thingsOnShelfIntro").Dispatch();
+                    CreateAction<PlayMouseSpeechAction>().WithSpeech(this.introSpeech).Dispatch();
                 }
                 else
                 {
@@ -48,7 +54,7 @@ namespace DemoApp.ThingsOnShelfGame.States
             
             else if (action is MouseSpeechFinishedAction)
             {
-                if (((MouseSpeechFinishedAction) action).SpeechId == "thingsOnShelfIntro")
+                if (((MouseSpeechFinishedAction) action).Speech == this.introSpeech)
                 {
                     CreateAction<TaskReadyAction>().Dispatch();
                 }

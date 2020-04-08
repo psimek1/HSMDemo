@@ -16,9 +16,10 @@ namespace DemoApp.ThingsOnShelfGame.States
 
         public ThingsSet ThingsSet { get; private set; }
         
-        private InitState initState;
-        private InputState inputState;
-        
+        private readonly InitState initState;
+        private readonly InputState inputState;
+        private readonly SuccessState successState;
+        private readonly FailState failState;
         
         public ThingsOnShelfGameTaskState()
         {
@@ -27,6 +28,8 @@ namespace DemoApp.ThingsOnShelfGame.States
             
             AddChildState(this.initState = new InitState());
             AddChildState(this.inputState = new InputState());
+            AddChildState(this.successState = new SuccessState());
+            AddChildState(this.failState = new FailState());
             
         }
 
@@ -48,6 +51,20 @@ namespace DemoApp.ThingsOnShelfGame.States
             {
                 SwitchState(this.inputState);
                 action.SetHandled();
+            }
+            
+            else if (action is ThingSelectedAction thingSelectedAction)
+            {
+                if (this.ThingsSet.Values[thingSelectedAction.Index] == 1)
+                {
+                    SwitchState(this.successState);
+                }
+                else
+                {
+                    SwitchState(this.failState);
+                }
+                
+                action.SetHandled();                
             }
         }
         

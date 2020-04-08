@@ -1,4 +1,5 @@
 ﻿using DemoApp.Core.Actions;
+using DemoApp.Core.Data;
 using DemoApp.Core.View;
 using HSM;
 
@@ -37,6 +38,8 @@ namespace DemoApp.Core.States
 
             AddChildState(this.menuState = new MenuState());
             AddChildState(this.gameState = new GameState());
+            
+            AddModule(new MouseSpeechStateModule());
         }
 
         public override void OnStateEnter()
@@ -50,14 +53,5 @@ namespace DemoApp.Core.States
             SwitchState(this.gameState);
         }
 
-        public override void HandleAction(HSMAction action)
-        {
-            base.HandleAction(action);
-
-            if (action is PlayMouseSpeechAction)
-            {
-                ForEachViewComponent<IPlayMouseSpeech>(c => c.PlayMouseSpeech((action as PlayMouseSpeechAction).SpeechId));
-            }
-        }
     }
 }

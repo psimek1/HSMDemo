@@ -24,11 +24,7 @@ namespace DemoApp.ThingsOnShelfGame.States
 
             if (action is ThingSelectedAction)
             {
-                int index = (action as ThingSelectedAction).Index;
-                Debug.Log(index);
-                
-                ForEachViewComponent<IDisableInput>(c => c.DisableInput());    
-                action.SetHandled();
+                ForEachViewComponent<IDisableInput>(c => c.DisableInput());
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿namespace DemoApp.Core
+﻿namespace DemoApp.Core.Data
 {
     public enum Game
     {

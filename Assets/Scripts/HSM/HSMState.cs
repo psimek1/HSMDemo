@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace HSM
 {
-    public abstract class HSMState
+    public abstract class HSMState: HSMStateModuleBase
     {
 
-        private HSMManager manager;
-
-        internal HSMManager Manager
+        internal override HSMManager Manager
         {
             get => this.manager;
             set
@@ -19,18 +16,24 @@ namespace HSM
                 {
                     childState.Manager = value;
                 }
+
+                foreach (var module in modules)
+                {
+                    module.Manager = value;
+                }
             }
         }
-
-        protected string name;
 
         private HSMState parentState;
 
         private readonly List<HSMState> childStates;
 
+        private readonly List<HSMStateModule> modules;
+
         protected HSMState()
         {
             this.childStates = new List<HSMState>();
+            this.modules = new List<HSMStateModule>();
         }
 
         public HSMState ParentState
@@ -38,9 +41,7 @@ namespace HSM
             get => this.parentState;
             private set => this.parentState = value;
         }
-
-        public string Name => this.name;
-        public string FullName => this.parentState != null ? this.parentState.FullName + "." + this.name : this.name;
+        public override string FullName => this.parentState != null ? this.parentState.FullName + "." + this.name : this.name;
 
         protected void AddChildState(HSMState state)
         {
@@ -48,6 +49,15 @@ namespace HSM
             {
                 this.childStates.Add(state);
                 state.ParentState = this;
+            }
+        }
+
+        protected void AddModule(HSMStateModule module)
+        {
+            if (!this.modules.Contains(module))
+            {
+                this.modules.Add(module);
+                module.OwnerState = this;
             }
         }
 
@@ -75,48 +85,46 @@ namespace HSM
             return this.parentState.IsChildOf(state);
         }
     
-        public T GetModel<T>() where T: class
+        public override T GetModel<T>()
         {
+            T model = null;
             if (this is T)
             {
-                return this as T;
+                model = this as T;
             }
-            else
+            if (model == null)
+            {
+                model = this.modules.Find(module => module is T) as T;
+            }
+            if (model == null)
             {
                 return parentState?.GetModel<T>();
             }
+
+            return model;
         }
 
-        public TAction CreateAction<TAction>() where TAction : HSMAction, new()
+        public override void HandleAction(HSMAction action)
         {
-            return this.manager.CreateAction<TAction>();
+            base.HandleAction(action);
+            
+            this.modules.ForEach(module => module.HandleAction(action));
+        }
+
+        public override void OnStateEnter()
+        {
+            base.OnStateEnter();
+            
+            this.modules.ForEach(module => module.OnStateEnter());
         }
         
-        public void ForEachViewComponent<T>(Action<T> action) where T: class
+        public override void OnStateExit()
         {
-            this.manager.ForEachViewComponent(action);
+            base.OnStateExit();
+            
+            this.modules.ForEach(module => module.OnStateExit());
         }
-
-        public virtual void OnStateEnter()
-        {
-            Log("OnStateEnter");
-        }
-
-        public virtual void OnStateExit()
-        {
-            Log("OnStateExit");
-        }
-
-        public virtual void HandleAction(HSMAction action)
-        {
-            Log("HandleAction " + action);
-        }
-
-        public void Log(string msg)
-        {
-            Debug.Log(this.FullName + ": " + msg);
-        }
- 
+        
     }
     
 }

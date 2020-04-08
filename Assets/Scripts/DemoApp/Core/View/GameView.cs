@@ -1,4 +1,5 @@
-﻿using HSM;
+﻿using DemoApp.Core.Data;
+using HSM;
 using UnityEngine;
 
 namespace DemoApp.Core.View
