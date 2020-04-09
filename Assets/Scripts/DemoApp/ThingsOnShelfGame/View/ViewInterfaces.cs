@@ -1,4 +1,5 @@
-﻿using HSM;
+﻿using DemoApp.ThingsOnShelfGame.Data;
+using HSM;
 
 namespace DemoApp.ThingsOnShelfGame.View
 {
@@ -15,5 +16,15 @@ namespace DemoApp.ThingsOnShelfGame.View
     public interface IDisableInput
     {
         void DisableInput();
+    }
+
+    public interface IShowSolution
+    {
+        void ShowSolution(int correctThingIndex);
+    }
+    
+    public interface IFinishTask
+    {
+        void FinishTask();
     }
 }

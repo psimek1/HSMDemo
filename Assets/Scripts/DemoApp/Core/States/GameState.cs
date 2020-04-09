@@ -1,4 +1,5 @@
-﻿using DemoApp.Core.View;
+﻿using DemoApp.Core.Actions;
+using DemoApp.Core.View;
 using HSM;
 
 namespace DemoApp.Core.States
@@ -23,6 +24,8 @@ namespace DemoApp.Core.States
         
         private readonly GameMenuState gameMenuState;
         private readonly GameTaskState gameTaskState;
+        private readonly GameNextTaskState gameNextTaskState;
+        
 
         public GameState() : base()
         {
@@ -38,7 +41,7 @@ namespace DemoApp.Core.States
         {
             base.OnStateEnter();
 
-            ForEachViewComponent<IInitGame>(c => c.InitGame(GetModel<IDemoApp>().CurrentGame));
+            ForEachViewComponent<IInitGame>(c => c.InitGame(GetModel<IApp>().CurrentGame));
 
             // v tomto demu přeskakujeme menu (resp. logiku výběru tasku) a jdeme rovnou na task:
 
@@ -46,5 +49,18 @@ namespace DemoApp.Core.States
             
             SwitchState(this.gameTaskState);
         }
+        
+        public override void HandleAction(HSMAction action)
+        {
+            base.HandleAction(action);
+
+            if (action is TaskFinishedAction taskFinishedAction)
+            {
+                // todo
+                
+                action.SetHandled();
+            }
+        }
+        
     }
 }

@@ -1,11 +1,13 @@
-﻿using HSM;
+﻿using System.Collections;
+using DemoApp.ThingsOnShelfGame.Data;
+using HSM;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace DemoApp.ThingsOnShelfGame.View
 {
-    public class ThingImageView : HSMViewComponent, IInitTask, IEnableInput, IDisableInput, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+    public class ThingImageView : HSMViewComponent, IInitTask, IEnableInput, IDisableInput, IShowSolution, IFinishTask, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
 
         [SerializeField]
@@ -43,6 +45,20 @@ namespace DemoApp.ThingsOnShelfGame.View
             this.isInputEnabled = false;
         }
 
+        public void ShowSolution(int correctThingIndex)
+        {
+            if (this.index == correctThingIndex)
+            {
+                StartCoroutine(HighlightCoroutine());
+            }
+        }
+        
+        public void FinishTask()
+        {
+            StopAllCoroutines();
+            this.border.SetActive(false);
+        }
+       
         public void OnPointerEnter(PointerEventData eventData)
         {
             if (this.isInputEnabled)
@@ -61,6 +77,17 @@ namespace DemoApp.ThingsOnShelfGame.View
             if (this.isInputEnabled)
             {
                 CreateAction<ThingSelectedAction>().WithIndex(this.index).Dispatch();
+            }
+        }
+
+        private IEnumerator HighlightCoroutine()
+        {
+            while (true)
+            {
+                this.border.SetActive(true);
+                yield return new WaitForSeconds(0.1f);
+                this.border.SetActive(false);
+                yield return new WaitForSeconds(0.1f);
             }
         }
 

@@ -9,7 +9,7 @@ namespace DemoApp.Core.States
     /**
      * Interface pro top-level model, obsahuje nejobecnější věci, dostupné kdykoliv
      */
-    public interface IDemoApp
+    public interface IApp
     {
         
         string UserNick { get; }
@@ -21,7 +21,7 @@ namespace DemoApp.Core.States
     /*
      * Top-level stav demo aplikace
      */
-    public class DemoAppState: HSMState, IDemoApp
+    public class AppState: HSMState, IApp
     {
         public string UserNick { get; }
         
@@ -30,7 +30,7 @@ namespace DemoApp.Core.States
         private readonly MenuState menuState;
         private readonly GameState gameState;
         
-        public DemoAppState() : base()
+        public AppState() : base()
         {
             this.name = "DemoApp";
             
@@ -46,7 +46,7 @@ namespace DemoApp.Core.States
         {
             base.OnStateEnter();
             
-            // v tomto demu přeskakujeme menu a jdeme rovnou do hry:
+            // v tomto demu přeskakujeme menu (nastavujeme vybraný typ hry) a jdeme rovnou do hry:
             
             this.CurrentGame = Game.ThingsOnShelfGame;
             

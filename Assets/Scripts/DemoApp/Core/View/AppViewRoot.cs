@@ -3,7 +3,7 @@ using HSM;
 
 namespace DemoApp.Core.View
 {
-    public class DemoAppViewRoot : HSMViewRoot<DemoAppState>
+    public class AppViewRoot : HSMViewRoot<AppState>
     {
         
     }

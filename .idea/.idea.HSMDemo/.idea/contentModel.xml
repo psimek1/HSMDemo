@@ -10,6 +10,7 @@
           <e p="DemoApp" t="Include">
             <e p="Core" t="Include">
               <e p="Actions" t="Include">
+                <e p="GameActions.cs" t="Include" />
                 <e p="MouseSpeechActions.cs" t="Include" />
               </e>
               <e p="Data" t="Include">
@@ -17,15 +18,16 @@
                 <e p="MouseSpeech.cs" t="Include" />
               </e>
               <e p="States" t="Include">
-                <e p="DemoAppState.cs" t="Include" />
+                <e p="AppState.cs" t="Include" />
                 <e p="GameMenuState.cs" t="Include" />
+                <e p="GameNextTaskState.cs" t="Include" />
                 <e p="GameState.cs" t="Include" />
                 <e p="GameTaskState.cs" t="Include" />
                 <e p="MenuState.cs" t="Include" />
                 <e p="MouseSpeechStateModule.cs" t="Include" />
               </e>
               <e p="View" t="Include">
-                <e p="DemoAppViewRoot.cs" t="Include" />
+                <e p="AppViewRoot.cs" t="Include" />
                 <e p="GameView.cs" t="Include" />
                 <e p="MouseCharacterView.cs" t="Include" />
                 <e p="ViewInterfaces.cs" t="Include" />
@@ -39,16 +41,21 @@
                 <e p="ThingsSet.cs" t="Include" />
               </e>
               <e p="States" t="Include">
-                <e p="FailState.cs" t="Include" />
+                <e p="FinishState.cs" t="Include" />
                 <e p="InitState.cs" t="Include" />
                 <e p="InputState.cs" t="Include" />
-                <e p="SuccessState.cs" t="Include" />
+                <e p="ResultState.cs" t="Include" />
                 <e p="ThingsOnShelfGameTaskState.cs" t="Include" />
               </e>
               <e p="View" t="Include">
                 <e p="ThingImageView.cs" t="Include" />
                 <e p="ThingsView.cs" t="Include" />
                 <e p="ViewInterfaces.cs" t="Include" />
+              </e>
+            </e>
+            <e p="WhatIsDifferentGame" t="Include">
+              <e p="States" t="Include">
+                <e p="WhatIsDifferentGameTaskState.cs" t="Include" />
               </e>
             </e>
           </e>

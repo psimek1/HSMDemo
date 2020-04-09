@@ -6,14 +6,11 @@ namespace DemoApp.Core.Actions
     
     public abstract class MouseSpeechAction: HSMAction
     {
-
-        private MouseSpeech speech;
-
-        public MouseSpeech Speech => speech;
+        public MouseSpeech Speech { get; private set; }
 
         public MouseSpeechAction WithSpeech(MouseSpeech value)
         {
-            this.speech = value;
+            this.Speech = value;
             return this;
         }
         

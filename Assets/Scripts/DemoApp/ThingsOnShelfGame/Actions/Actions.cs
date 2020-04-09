@@ -27,5 +27,15 @@ namespace DemoApp.ThingsOnShelfGame
         }
         
     }
+
+    public class TaskResultFinishedAction : HSMAction
+    {
+        
+    }
+    
+    public class TaskViewFinishedAction : HSMAction
+    {
+        
+    }
     
 }

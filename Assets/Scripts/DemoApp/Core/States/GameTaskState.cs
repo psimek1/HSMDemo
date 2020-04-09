@@ -1,5 +1,7 @@
-﻿using DemoApp.ThingsOnShelfGame;
+﻿using System.Collections.Generic;
+using DemoApp.Core.Data;
 using DemoApp.ThingsOnShelfGame.States;
+using DemoApp.WhatIsDifferentGame.States;
 using HSM;
 
 namespace DemoApp.Core.States
@@ -7,22 +9,30 @@ namespace DemoApp.Core.States
     public class GameTaskState: HSMState
     {
 
-        private ThingsOnShelfGameTaskState thingsOnShelfGameTaskState;
+        private readonly Dictionary<Game, HSMState> statesByGame;
         
         public GameTaskState()
         {
             this.name = "GameTask";
-            
-            AddChildState(this.thingsOnShelfGameTaskState = new ThingsOnShelfGameTaskState());
+
+            this.statesByGame = new Dictionary<Game, HSMState>
+            {
+                [Game.ThingsOnShelfGame] = new ThingsOnShelfGameTaskState(),
+                [Game.WhatIsDifferentGame] = new WhatIsDifferentGameTaskState()
+            };
+
+            foreach (var keyValuePair in this.statesByGame)
+            {
+                AddChildState(keyValuePair.Value);
+            }
         }
 
         public override void OnStateEnter()
         {
             base.OnStateEnter();
-            
-            // rovnou přepínáme na konkrétní typ úkolu, finálně tady pochopitelně bude výběr příslušného úkolu:
-            SwitchState(this.thingsOnShelfGameTaskState);
+
+            SwitchState(this.statesByGame[GetModel<IApp>().CurrentGame]);
         }
-        
+
     }
 }
