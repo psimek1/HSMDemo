@@ -4,8 +4,10 @@ namespace DemoApp.Core.States
 {
     public class GameMenuState: HSMState
     {
-        public GameMenuState()
+        public override void OnStateInit()
         {
+            base.OnStateInit();
+            
             this.name = "GameMenu";
         }
     }

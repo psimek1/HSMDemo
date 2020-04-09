@@ -14,7 +14,7 @@ namespace DemoApp.Core.States
         
         string UserNick { get; }
         
-        Game CurrentGame { get; }
+        GameType CurrentGameType { get; }
         
     }
     
@@ -23,15 +23,17 @@ namespace DemoApp.Core.States
      */
     public class AppState: HSMState, IApp
     {
-        public string UserNick { get; }
+        public string UserNick { get; private set; }
         
-        public Game CurrentGame { get; private set; }
+        public GameType CurrentGameType { get; private set; }
 
-        private readonly MenuState menuState;
-        private readonly GameState gameState;
-        
-        public AppState() : base()
+        private MenuState menuState;
+        private GameState gameState;
+
+        public override void OnStateInit()
         {
+            base.OnStateInit();
+            
             this.name = "DemoApp";
             
             this.UserNick = "DemoUser";
@@ -48,7 +50,7 @@ namespace DemoApp.Core.States
             
             // v tomto demu přeskakujeme menu (nastavujeme vybraný typ hry) a jdeme rovnou do hry:
             
-            this.CurrentGame = Game.ThingsOnShelfGame;
+            this.CurrentGameType = GameType.ThingsOnShelfGame;
             
             SwitchState(this.gameState);
         }

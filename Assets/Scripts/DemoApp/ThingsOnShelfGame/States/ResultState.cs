@@ -12,8 +12,10 @@ namespace DemoApp.ThingsOnShelfGame.States
 
         private MouseSpeech failSpeech;
         
-        public ResultState()
+        public override void OnStateInit()
         {
+            base.OnStateInit();
+            
             this.name = "Result";
 
             this.successSpeech = new MouseSpeech("Výborně!");

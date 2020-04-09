@@ -11,8 +11,10 @@ namespace DemoApp.ThingsOnShelfGame.States
 
         private MouseSpeech introSpeech;
         
-        public InitState()
+        public override void OnStateInit()
         {
+            base.OnStateInit();
+            
             this.name = "Init";
             
             this.introSpeech = new MouseSpeech("Dokážeš najít předmět, který nepatří mezi ostatní?");
@@ -24,7 +26,7 @@ namespace DemoApp.ThingsOnShelfGame.States
             
             // Zobrazení grafiky úkolu:
 
-            ForEachViewComponent<IInitTask>(c => c.InitTask(GetModel<IThingsOnShelfGameTask>().ThingsSet));
+            ForEachViewComponent<IInitThingsOnShelfTask>(c => c.InitThingsOnShelfTask(GetModel<IThingsOnShelfGameTask>().ThingsSet));
             
             // Následně čekáme na TaskViewReadyAction od view
         }

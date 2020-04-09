@@ -5,25 +5,6 @@ namespace HSM
 {
     public abstract class HSMState: HSMStateModuleBase
     {
-
-        internal override HSMManager Manager
-        {
-            get => this.manager;
-            set
-            {
-                this.manager = value;
-                foreach (var childState in childStates)
-                {
-                    childState.Manager = value;
-                }
-
-                foreach (var module in modules)
-                {
-                    module.Manager = value;
-                }
-            }
-        }
-
         private HSMState parentState;
 
         private readonly List<HSMState> childStates;
@@ -49,6 +30,7 @@ namespace HSM
             {
                 this.childStates.Add(state);
                 state.ParentState = this;
+                state.Init(this.manager);
             }
         }
 
@@ -58,6 +40,7 @@ namespace HSM
             {
                 this.modules.Add(module);
                 module.OwnerState = this;
+                module.Init(this.manager);
             }
         }
 

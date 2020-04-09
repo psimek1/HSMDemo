@@ -6,8 +6,10 @@ namespace DemoApp.ThingsOnShelfGame.States
 {
     public class FinishState: HSMState
     {
-        public FinishState()
+        public override void OnStateInit()
         {
+            base.OnStateInit();
+            
             this.name = "Finish";
         }
 
@@ -15,7 +17,7 @@ namespace DemoApp.ThingsOnShelfGame.States
         {
             base.OnStateEnter();
             
-            ForEachViewComponent<IFinishTask>(c => c.FinishTask());
+            ForEachViewComponent<IFinishThingsOnShelfTask>(c => c.FinishThingsOnShelfTask());
         }
 
         public override void HandleAction(HSMAction action)

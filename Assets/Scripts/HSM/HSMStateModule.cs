@@ -17,7 +17,6 @@ namespace HSM
         internal virtual HSMManager Manager
         {
             get => this.manager;
-            set => this.manager = value;
         }
 
         public abstract T GetModel<T>() where T : class;
@@ -30,6 +29,17 @@ namespace HSM
         public void ForEachViewComponent<T>(Action<T> action) where T: class
         {
             this.manager.ForEachViewComponent(action);
+        }
+
+        internal void Init(HSMManager hsmManager)
+        {
+            this.manager = hsmManager;
+                        
+            this.OnStateInit();
+        }
+        
+        public virtual void OnStateInit()
+        {
         }
         
         public virtual void OnStateEnter()

@@ -3,11 +3,10 @@ using System.Collections.Generic;
 
 namespace HSM
 {
-    public class HSMManager
+    
+    public abstract class HSMManager
     {
 
-        private readonly HSMState rootState;
-        
         private HSMState currentState;
 
         private readonly Queue<HSMAction> actionQueue;
@@ -16,21 +15,16 @@ namespace HSM
 
         private HSMViewRoot viewRoot;
 
-        public HSMManager(HSMState rootState, HSMViewRoot viewRoot)
+        public HSMManager(HSMViewRoot viewRoot)
         {
-            this.rootState = rootState;
-            this.rootState.Manager = this;
 
             this.viewRoot = viewRoot;
             
             this.actionQueue = new Queue<HSMAction>();
         }
 
-        public void Run()
-        {
-            SwitchState(this.rootState);
-        }
-
+        public abstract void Run();
+        
         public void SwitchState(HSMState state)
         {
             if (state != this.currentState)
@@ -86,4 +80,23 @@ namespace HSM
         }
         
     }
+
+    public class HSMManager<TRootState>: HSMManager where TRootState : HSMState, new()
+    {
+        
+        private readonly HSMState rootState;
+        
+        public HSMManager(HSMViewRoot viewRoot) : base(viewRoot)
+        {
+            this.rootState = new TRootState();
+            this.rootState.Init(this);
+        }
+        
+        public override void Run()
+        {
+            SwitchState(this.rootState);
+        }
+        
+    }
+    
 }

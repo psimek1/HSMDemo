@@ -14,7 +14,7 @@
                 <e p="MouseSpeechActions.cs" t="Include" />
               </e>
               <e p="Data" t="Include">
-                <e p="Game.cs" t="Include" />
+                <e p="GameType.cs" t="Include" />
                 <e p="MouseSpeech.cs" t="Include" />
               </e>
               <e p="States" t="Include">
@@ -30,6 +30,8 @@
                 <e p="AppViewRoot.cs" t="Include" />
                 <e p="GameView.cs" t="Include" />
                 <e p="MouseCharacterView.cs" t="Include" />
+                <e p="NextTaskView.cs" t="Include" />
+                <e p="TaskCounterView.cs" t="Include" />
                 <e p="ViewInterfaces.cs" t="Include" />
               </e>
             </e>

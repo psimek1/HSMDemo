@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace DemoApp.ThingsOnShelfGame.View
 {
-    public class ThingImageView : HSMViewComponent, IInitTask, IEnableInput, IDisableInput, IShowSolution, IFinishTask, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+    public class ThingImageView : HSMViewComponent, IInitThingsOnShelfTask, IEnableInput, IDisableInput, IShowSolution, IFinishThingsOnShelfTask, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
 
         [SerializeField]
@@ -29,7 +29,7 @@ namespace DemoApp.ThingsOnShelfGame.View
             this.border.SetActive(false);
         }
 
-        public void InitTask(ThingsSet thingsSet)
+        public void InitThingsOnShelfTask(ThingsSet thingsSet)
         {
             fill.color = this.colors[thingsSet.Values[this.index]];
         }
@@ -53,7 +53,7 @@ namespace DemoApp.ThingsOnShelfGame.View
             }
         }
         
-        public void FinishTask()
+        public void FinishThingsOnShelfTask()
         {
             StopAllCoroutines();
             this.border.SetActive(false);

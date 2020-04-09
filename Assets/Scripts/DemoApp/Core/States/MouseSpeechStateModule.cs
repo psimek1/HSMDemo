@@ -6,8 +6,10 @@ namespace DemoApp.Core.States
 {
     public class MouseSpeechStateModule: HSMStateModule
     {
-        public MouseSpeechStateModule()
+        public override void OnStateInit()
         {
+            base.OnStateInit();
+            
             this.name = "MouseSpeech";
         }
 

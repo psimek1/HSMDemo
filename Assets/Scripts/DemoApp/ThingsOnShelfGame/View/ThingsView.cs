@@ -6,14 +6,14 @@ using UnityEngine;
 
 namespace DemoApp.ThingsOnShelfGame.View
 {
-    public class ThingsView : HSMViewComponent, IInitTask, IFinishTask
+    public class ThingsView : HSMViewComponent, IInitThingsOnShelfTask, IFinishThingsOnShelfTask
     {
-        public void InitTask(ThingsSet thingsSet)
+        public void InitThingsOnShelfTask(ThingsSet thingsSet)
         {
             StartCoroutine(InitTaskCoroutine(thingsSet));
         }
 
-        public void FinishTask()
+        public void FinishThingsOnShelfTask()
         {
             StartCoroutine(FinishTaskCoroutine());
         }

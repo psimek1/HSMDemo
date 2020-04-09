@@ -21,5 +21,11 @@ namespace DemoApp.Core.Actions
         }
         
     }
+
+    public class NextTaskRequestAction : HSMAction
+    {
+        
+    }
+    
     
 }

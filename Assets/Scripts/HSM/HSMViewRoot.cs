@@ -25,10 +25,9 @@ namespace HSM
     
     public abstract class HSMViewRoot<TRootState>: HSMViewRoot where TRootState: HSMState, new()
     {
-
         private void Awake()
         {
-            this.hsmManager = new HSMManager(new TRootState(), this);
+            this.hsmManager = new HSMManager<TRootState>(this);
         }
 
         private void Start()
@@ -36,4 +35,5 @@ namespace HSM
             this.hsmManager.Run();
         }
     }
+    
 }

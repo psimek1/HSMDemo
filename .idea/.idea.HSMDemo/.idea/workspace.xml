@@ -2,40 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62ae0709-7617-41f2-810e-8fe133ea7ae2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Actions/GameActions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Actions/GameActions.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameNextTaskState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameNextTaskState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/FinishState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/FinishState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/ResultState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/ResultState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/WhatIsDifferentGame.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/WhatIsDifferentGame/Actions.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/WhatIsDifferentGame/Data.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/WhatIsDifferentGame/States.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/WhatIsDifferentGame/States/WhatIsDifferentGameTaskState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/WhatIsDifferentGame/States/WhatIsDifferentGameTaskState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/WhatIsDifferentGame/View.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HSMDemo/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HSMDemo/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HSMDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HSMDemo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Actions/MouseSpeechActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Actions/MouseSpeechActions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/DemoAppState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/AppState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/DemoAppState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/AppState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/nextTask.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/nextTask.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DemoApp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DemoApp.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Actions/GameActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Actions/GameActions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Data/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Data/GameType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Data/Game.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Data/GameType.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/AppState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/AppState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameMenuState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameMenuState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameNextTaskState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameNextTaskState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameTaskState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameTaskState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/DemoAppViewRoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/AppViewRoot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/DemoAppViewRoot.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/AppViewRoot.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/Actions/Actions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/Actions/Actions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/Data/ThingsSet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/Data/ThingsSet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/FailState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/FailState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/SuccessState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/SuccessState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/MenuState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/MenuState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/MouseSpeechStateModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/MouseSpeechStateModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/GameView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/GameView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/ViewInterfaces.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/ViewInterfaces.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/FinishState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/FinishState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/InitState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/InitState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/InputState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/InputState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/ResultState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/ResultState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/ThingsOnShelfGameTaskState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/ThingsOnShelfGameTaskState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/View/ThingImageView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/View/ThingImageView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/View/ThingsView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/View/ThingsView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/View/ViewInterfaces.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/View/ViewInterfaces.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HSM/HSMManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HSM/HSMManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HSM/HSMState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HSM/HSMState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HSM/HSMStateModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HSM/HSMStateModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HSM/HSMViewRoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HSM/HSMViewRoot.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,58 +41,53 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HSM/HSMState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HSM/HSMViewComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameTaskState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/AsyncCallQueue.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/MouseSpeechStateModule.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/InputState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Data/Game.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/FinishState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HSM/HSMStateModule.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HSM/HSMAction.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/MouseCharacterView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/Actions/Actions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Actions/MouseSpeechActions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HSM/HSMViewRoot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/Data/ThingsSet.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/WhatIsDifferentGame/States/WhatIsDifferentGameTaskState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/ResultState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/ViewInterfaces.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/GameView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Data/MouseSpeech.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HSM/HSMManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/InitState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/View/ThingImageView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/ThingsOnShelfGameTaskState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameNextTaskState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/MenuState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/NextTaskView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/AppViewRoot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Actions/GameActions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HSM/HSMState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HSM/HSMViewComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/AsyncCallQueue.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/MouseSpeechStateModule.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/InputState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Data/GameType.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/FinishState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/MouseCharacterView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/TaskCounterView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Actions/MouseSpeechActions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HSM/HSMViewRoot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/WhatIsDifferentGame/States/WhatIsDifferentGameTaskState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/ResultState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/ViewInterfaces.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Data/MouseSpeech.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/ThingsOnShelfGameTaskState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/AppState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameMenuState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AE22A4E8-F83C-41D6-9684-AE7F557133D9/81/3f2c222c/Queue`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/AppViewRoot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/View/ViewInterfaces.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/DemoApp.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/View/ThingsView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Actions/GameActions.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/GameMenuState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/ThingsOnShelfGameTaskState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Actions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/GameState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/GameTaskState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/HSM/HSMViewComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/InputState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/DemoAppViewRoot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/HSM/HSMViewRoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/DemoAppState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameMenuState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/MenuState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Game.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/GameView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/InitState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/ThingsSet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/View/ThingView.cs" />
@@ -106,36 +95,44 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/HSM/HSMAction.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Actions/IActionHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HSM/IActionHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/HSM/HSMManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/InputState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/FailState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Data/Game.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Data/MouseSpeech.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/DemoAppState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/HSM/HSMStateModule.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/HSM/HSMState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/MouseSpeechStateModule.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/ViewInterfaces.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/MouseCharacterView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/InitState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/AppViewRoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Actions/MouseSpeechActions.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Actions/GameActions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/SuccessState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/Data/ThingsSet.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/View/ViewInterfaces.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/ResultState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/View/ThingImageView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/ThingsOnShelfGameTaskState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/Actions/Actions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/View/ThingsView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/FinishState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/NextTaskState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/WhatIsDifferentGame/States/WhatIsDifferentGameTaskState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/NextTaskView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Actions/GameActions.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/GameView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/View/ViewInterfaces.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/ViewInterfaces.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/TaskCounterView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Data/Game.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Data/GameType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HSM/HSMManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HSM/HSMViewComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HSM/HSMViewRoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HSM/HSMState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/AppState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameMenuState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameNextTaskState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/WhatIsDifferentGame/States/WhatIsDifferentGameTaskState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/AppState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameTaskState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/MenuState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HSM/HSMStateModule.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/MouseSpeechStateModule.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/FinishState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/InitState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/InputState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/ResultState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/ThingsOnShelfGameTaskState.cs" />
       </list>
     </option>
   </component>
@@ -186,7 +183,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585998905771</updated>
-      <workItem from="1585998909238" duration="101975000" />
+      <workItem from="1585998909238" duration="113545000" />
     </task>
     <servers />
   </component>

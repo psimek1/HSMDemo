@@ -1,10 +1,11 @@
-﻿using DemoApp.Core.Data;
+﻿using System;
+using DemoApp.Core.Data;
 using HSM;
 using UnityEngine;
 
 namespace DemoApp.Core.View
 {
-    public class GameView : HSMViewComponent, IInitGame
+    public class GameView : HSMViewComponent, IInitGame, IShowNextTaskMenu
     {
 
         [SerializeField]
@@ -12,14 +13,26 @@ namespace DemoApp.Core.View
 
         [SerializeField]
         private GameObject whatIsDifferentGame;
-        
-        public void InitGame(Game game)
+
+        [SerializeField]
+        private GameObject nextTask;
+
+        private void Awake()
+        {
+            this.nextTask.SetActive(false);
+        }
+
+        public void InitGame(GameType gameType)
         {
             // Tady samozřejmě bude nějaké inteligentnější loadování herních modulů.
             
-            this.thingsOnShelfGame.SetActive(game == Game.ThingsOnShelfGame);
-            this.whatIsDifferentGame.SetActive(game == Game.WhatIsDifferentGame);
+            this.thingsOnShelfGame.SetActive(gameType == GameType.ThingsOnShelfGame);
+            this.whatIsDifferentGame.SetActive(gameType == GameType.WhatIsDifferentGame);
         }
-        
+
+        public void ShowNextTaskMenu()
+        {
+            this.nextTask.SetActive(true);
+        }
     }
 }

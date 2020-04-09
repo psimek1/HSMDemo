@@ -21,13 +21,14 @@ namespace DemoApp.ThingsOnShelfGame.States
 
         public int SelectedThingIndex { get; private set; }
 
-        private readonly InitState initState;
-        private readonly InputState inputState;
-        private readonly ResultState resultState;
-        private readonly FinishState finishState;
+        private InitState initState;
+        private InputState inputState;
+        private ResultState resultState;
+        private FinishState finishState;
         
-        public ThingsOnShelfGameTaskState()
+        public override void OnStateInit()
         {
+            base.OnStateInit();
 
             this.name = "ThingsOnShelfGameTask";
             

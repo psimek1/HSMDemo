@@ -1,10 +1,17 @@
 ﻿namespace DemoApp.Core.Data
 {
-    public enum Game
+    public enum GameType
     {
         ThingsOnShelfGame,
         WhatIsDifferentGame,
         AnotherGame
+    }
+
+    public class GameDef
+    {
+        
+
+        
     }
     
 }

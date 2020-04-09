@@ -3,9 +3,9 @@ using HSM;
 
 namespace DemoApp.ThingsOnShelfGame.View
 {
-    public interface IInitTask
+    public interface IInitThingsOnShelfTask
     {
-        void InitTask(ThingsSet thingsSet);
+        void InitThingsOnShelfTask(ThingsSet thingsSet);
     }
 
     public interface IEnableInput
@@ -23,8 +23,8 @@ namespace DemoApp.ThingsOnShelfGame.View
         void ShowSolution(int correctThingIndex);
     }
     
-    public interface IFinishTask
+    public interface IFinishThingsOnShelfTask
     {
-        void FinishTask();
+        void FinishThingsOnShelfTask();
     }
 }

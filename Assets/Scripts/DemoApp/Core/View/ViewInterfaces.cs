@@ -2,9 +2,30 @@
 
 namespace DemoApp.Core.View
 {
+    
     public interface IInitGame
     {
-        void InitGame(Game game);
+        void InitGame(GameType gameType);
+    }
+
+    public interface IStartTask
+    {
+        void StartTask();
+    }
+    
+    public interface IEndTask
+    {
+        void EndTask();
+    }
+    
+    public interface IShowNextTaskMenu
+    {
+        void ShowNextTaskMenu();
+    }
+
+    public interface IHideNextTaskMenu
+    {
+        void HideNextTaskMenu();
     }
     
     public interface IPlayMouseSpeech

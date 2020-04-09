@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DemoApp.Core.Data;
+using DemoApp.Core.View;
 using DemoApp.ThingsOnShelfGame.States;
 using DemoApp.WhatIsDifferentGame.States;
 using HSM;
@@ -9,16 +10,17 @@ namespace DemoApp.Core.States
     public class GameTaskState: HSMState
     {
 
-        private readonly Dictionary<Game, HSMState> statesByGame;
+        private Dictionary<GameType, HSMState> statesByGame;
         
-        public GameTaskState()
+        public override void OnStateInit()
         {
+            base.OnStateInit();
             this.name = "GameTask";
 
-            this.statesByGame = new Dictionary<Game, HSMState>
+            this.statesByGame = new Dictionary<GameType, HSMState>
             {
-                [Game.ThingsOnShelfGame] = new ThingsOnShelfGameTaskState(),
-                [Game.WhatIsDifferentGame] = new WhatIsDifferentGameTaskState()
+                [GameType.ThingsOnShelfGame] = new ThingsOnShelfGameTaskState(),
+                [GameType.WhatIsDifferentGame] = new WhatIsDifferentGameTaskState()
             };
 
             foreach (var keyValuePair in this.statesByGame)
@@ -31,8 +33,16 @@ namespace DemoApp.Core.States
         {
             base.OnStateEnter();
 
-            SwitchState(this.statesByGame[GetModel<IApp>().CurrentGame]);
+            ForEachViewComponent<IStartTask>(c => c.StartTask());
+            
+            SwitchState(this.statesByGame[GetModel<IApp>().CurrentGameType]);
         }
 
+        public override void OnStateExit()
+        {
+            base.OnStateExit();
+
+            ForEachViewComponent<IEndTask>(c => c.EndTask());
+        }
     }
 }

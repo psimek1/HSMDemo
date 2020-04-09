@@ -8,6 +8,10 @@ namespace DemoApp.Core.States
     public interface IGame
     {
         bool IsFirstTask { get; }
+        
+        int TotalTaskCount { get; }
+        
+        int CurrentTaskIndex { get; }
     }
 
     /**
@@ -15,37 +19,42 @@ namespace DemoApp.Core.States
      * Celá tato třída může být v jiné konfiguraci nahrazena jinou třídou, která bude řešit alternativní průchod úkoly
      * - např. sekvence úkolů versus výběr úkolu z menu
      * Vždy však musí implementovat IGame pro data, která jsou všem verzím společná
-     * - viz např. IsFirstTask, díky kterému task zjistí, zda je první v řadě, a přizpůsobí se tomu (myšák říká úvodní instrukce pouze jednou)
+     * - viz např. IsFirstTask, díky kterému task zjistí, zda je první, a přizpůsobí se tomu (myšák říká úvodní instrukce pouze jednou)
      */
     public class GameState : HSMState, IGame
     {
 
         public bool IsFirstTask { get; private set; }
-        
-        private readonly GameMenuState gameMenuState;
-        private readonly GameTaskState gameTaskState;
-        private readonly GameNextTaskState gameNextTaskState;
+        public int TotalTaskCount { get; private set; }
+        public int CurrentTaskIndex { get; private set; }
+
+        private GameMenuState gameMenuState;
+        private GameTaskState gameTaskState;
+        private GameNextTaskState gameNextTaskState;
         
 
-        public GameState() : base()
+        public override void OnStateInit()
         {
+            base.OnStateInit();
 
             this.name = "Game";
 
             AddChildState(this.gameMenuState = new GameMenuState());
             AddChildState(this.gameTaskState = new GameTaskState());
-
+            AddChildState(this.gameNextTaskState = new GameNextTaskState());
         }
 
         public override void OnStateEnter()
         {
             base.OnStateEnter();
 
-            ForEachViewComponent<IInitGame>(c => c.InitGame(GetModel<IApp>().CurrentGame));
+            ForEachViewComponent<IInitGame>(c => c.InitGame(GetModel<IApp>().CurrentGameType));
 
             // v tomto demu přeskakujeme menu (resp. logiku výběru tasku) a jdeme rovnou na task:
 
             this.IsFirstTask = true;
+            this.TotalTaskCount = 10;
+            this.CurrentTaskIndex = 0;
             
             SwitchState(this.gameTaskState);
         }
@@ -56,10 +65,20 @@ namespace DemoApp.Core.States
 
             if (action is TaskFinishedAction taskFinishedAction)
             {
-                // todo
+                SwitchState(this.gameNextTaskState);
                 
                 action.SetHandled();
             }
+            
+            else if (action is NextTaskRequestAction)
+            {
+                this.IsFirstTask = false;
+                
+                SwitchState(this.gameTaskState);
+                
+                action.SetHandled();    
+            }
+            
         }
         
     }
