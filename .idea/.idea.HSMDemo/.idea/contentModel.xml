@@ -14,7 +14,8 @@
                 <e p="MouseSpeechActions.cs" t="Include" />
               </e>
               <e p="Data" t="Include">
-                <e p="GameType.cs" t="Include" />
+                <e p="GameConfig.cs" t="Include" />
+                <e p="GameTaskConfig.cs" t="Include" />
                 <e p="MouseSpeech.cs" t="Include" />
               </e>
               <e p="States" t="Include">
@@ -40,7 +41,8 @@
                 <e p="Actions.cs" t="Include" />
               </e>
               <e p="Data" t="Include">
-                <e p="ThingsSet.cs" t="Include" />
+                <e p="ThingsOnShelfGameConfig.cs" t="Include" />
+                <e p="ThingsOnShelfGameTaskConfig.cs" t="Include" />
               </e>
               <e p="States" t="Include">
                 <e p="FinishState.cs" t="Include" />
@@ -56,6 +58,9 @@
               </e>
             </e>
             <e p="WhatIsDifferentGame" t="Include">
+              <e p="Data" t="Include">
+                <e p="WhatIsDifferentGameConfig.cs" t="Include" />
+              </e>
               <e p="States" t="Include">
                 <e p="WhatIsDifferentGameTaskState.cs" t="Include" />
               </e>

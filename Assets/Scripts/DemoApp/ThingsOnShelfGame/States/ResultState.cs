@@ -11,13 +11,13 @@ namespace DemoApp.ThingsOnShelfGame.States
         private MouseSpeech successSpeech;
 
         private MouseSpeech failSpeech;
+
+        public override string Name => "Result";
         
         public override void OnStateInit()
         {
             base.OnStateInit();
             
-            this.name = "Result";
-
             this.successSpeech = new MouseSpeech("Výborně!");
             this.failSpeech = new MouseSpeech("To nebylo správně! Takhle to mělo být.");
         }
@@ -26,7 +26,7 @@ namespace DemoApp.ThingsOnShelfGame.States
         {
             base.OnStateEnter();
             
-            int correctThingIndex = GetModel<IThingsOnShelfGameTask>().ThingsSet.CorrectThingIndex;
+            int correctThingIndex = GetModel<IThingsOnShelfGameTask>().ThingsOnShelfGameTaskConfig.CorrectThingIndex;
             if (GetModel<IThingsOnShelfGameTask>().SelectedThingIndex == correctThingIndex)
             {
                 // success

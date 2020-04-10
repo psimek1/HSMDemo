@@ -4,11 +4,8 @@ namespace DemoApp.Core.States
 {
     public class MenuState: HSMState
     {
-        public override void OnStateInit()
-        {
-            base.OnStateInit();
+        
+        public override string Name => "Menu";
 
-            this.name = "Menu";
-        }
     }
 }

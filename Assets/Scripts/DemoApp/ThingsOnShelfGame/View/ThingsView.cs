@@ -8,9 +8,9 @@ namespace DemoApp.ThingsOnShelfGame.View
 {
     public class ThingsView : HSMViewComponent, IInitThingsOnShelfTask, IFinishThingsOnShelfTask
     {
-        public void InitThingsOnShelfTask(ThingsSet thingsSet)
+        public void InitThingsOnShelfTask(ThingsOnShelfGameTaskConfig thingsOnShelfGameTaskConfig)
         {
-            StartCoroutine(InitTaskCoroutine(thingsSet));
+            StartCoroutine(InitTaskCoroutine(thingsOnShelfGameTaskConfig));
         }
 
         public void FinishThingsOnShelfTask()
@@ -18,14 +18,14 @@ namespace DemoApp.ThingsOnShelfGame.View
             StartCoroutine(FinishTaskCoroutine());
         }
         
-        private IEnumerator InitTaskCoroutine(ThingsSet thingsSet)
+        private IEnumerator InitTaskCoroutine(ThingsOnShelfGameTaskConfig thingsOnShelfGameTaskConfig)
         {
             for (int i = 0; i < this.transform.childCount; i++)
             {
                 this.transform.GetChild(i).gameObject.SetActive(false);
             }
 
-            for (int i = 0; i < thingsSet.Values.Count; i++)
+            for (int i = 0; i < thingsOnShelfGameTaskConfig.Values.Count; i++)
             {
                 this.transform.GetChild(i).gameObject.SetActive(true);
                 yield return new WaitForSeconds(0.2f);

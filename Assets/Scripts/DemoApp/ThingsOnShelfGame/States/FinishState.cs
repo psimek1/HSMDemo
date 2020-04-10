@@ -6,13 +6,9 @@ namespace DemoApp.ThingsOnShelfGame.States
 {
     public class FinishState: HSMState
     {
-        public override void OnStateInit()
-        {
-            base.OnStateInit();
-            
-            this.name = "Finish";
-        }
 
+        public override string Name => "Finish";
+        
         public override void OnStateEnter()
         {
             base.OnStateEnter();

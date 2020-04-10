@@ -5,7 +5,7 @@ namespace DemoApp.Core.View
     
     public interface IInitGame
     {
-        void InitGame(GameType gameType);
+        void InitGame(GameConfig gameConfig);
     }
 
     public interface IStartTask

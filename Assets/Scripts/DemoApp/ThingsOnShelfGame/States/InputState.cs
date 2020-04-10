@@ -6,12 +6,7 @@ namespace DemoApp.ThingsOnShelfGame.States
 {
     public class InputState: HSMState
     {
-        public override void OnStateInit()
-        {
-            base.OnStateInit();
-            
-            this.name = "Input";
-        }
+        public override string Name => "Input";
 
         public override void OnStateEnter()
         {

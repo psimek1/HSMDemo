@@ -29,9 +29,9 @@ namespace DemoApp.ThingsOnShelfGame.View
             this.border.SetActive(false);
         }
 
-        public void InitThingsOnShelfTask(ThingsSet thingsSet)
+        public void InitThingsOnShelfTask(ThingsOnShelfGameTaskConfig thingsOnShelfGameTaskConfig)
         {
-            fill.color = this.colors[thingsSet.Values[this.index]];
+            fill.color = this.colors[thingsOnShelfGameTaskConfig.Values[this.index]];
         }
         
         public void EnableInput()

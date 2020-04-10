@@ -8,7 +8,7 @@ namespace DemoApp.ThingsOnShelfGame.States
     public interface IThingsOnShelfGameTask
     {
         
-        ThingsSet ThingsSet { get; }
+        ThingsOnShelfGameTaskConfig ThingsOnShelfGameTaskConfig { get; }
         
         int SelectedThingIndex { get; }
         
@@ -17,26 +17,22 @@ namespace DemoApp.ThingsOnShelfGame.States
     public class ThingsOnShelfGameTaskState: HSMState, IThingsOnShelfGameTask
     {
 
-        public ThingsSet ThingsSet { get; private set; }
+        public ThingsOnShelfGameTaskConfig ThingsOnShelfGameTaskConfig { get; private set; }
 
         public int SelectedThingIndex { get; private set; }
-
+        public override string Name => "ThingsOnShelfGameTask";
+        
         private InitState initState;
         private InputState inputState;
         private ResultState resultState;
         private FinishState finishState;
-        
-        public override void OnStateInit()
-        {
-            base.OnStateInit();
 
-            this.name = "ThingsOnShelfGameTask";
-            
+        protected override void AddChildStates()
+        {
             AddChildState(this.initState = new InitState());
             AddChildState(this.inputState = new InputState());
             AddChildState(this.resultState = new ResultState());
             AddChildState(this.finishState = new FinishState());
-            
         }
 
         public override void OnStateEnter()
@@ -44,7 +40,7 @@ namespace DemoApp.ThingsOnShelfGame.States
             base.OnStateEnter();
 
             // nakonfigurování úkolu (finálně se nakonfiguruje podle obtížnosti a dalších parametrů získaných z IGame...)
-            this.ThingsSet = new ThingsSet {Values = new List<int> {0,0,0,1,0,0}};
+            this.ThingsOnShelfGameTaskConfig = new ThingsOnShelfGameTaskConfig {Values = new List<int> {0,0,0,1,0,0}};
             this.SelectedThingIndex = -1;
 
             SwitchState(this.initState);
@@ -54,7 +50,7 @@ namespace DemoApp.ThingsOnShelfGame.States
         {
             base.OnStateExit();
 
-            this.ThingsSet = null;
+            this.ThingsOnShelfGameTaskConfig = null;
             this.SelectedThingIndex = -1;
         }
 

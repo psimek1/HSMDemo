@@ -7,10 +7,8 @@ namespace HSM
     {
         
         protected HSMManager manager;
-        
-        protected string name;
-        
-        public string Name => this.name;
+
+        public abstract string Name { get; }
 
         public abstract string FullName { get; }
         
@@ -31,7 +29,7 @@ namespace HSM
             this.manager.ForEachViewComponent(action);
         }
 
-        internal void Init(HSMManager hsmManager)
+        internal virtual void Init(HSMManager hsmManager)
         {
             this.manager = hsmManager;
                         
@@ -67,7 +65,7 @@ namespace HSM
     public abstract class HSMStateModule: HSMStateModuleBase
     {
 
-        public override string FullName => this.OwnerState?.FullName + "/" + this.name;
+        public override string FullName => this.OwnerState?.FullName + "/" + this.Name;
         
         internal HSMState OwnerState;
         

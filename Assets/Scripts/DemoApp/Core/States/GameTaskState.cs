@@ -1,32 +1,27 @@
 ﻿using System.Collections.Generic;
 using DemoApp.Core.Data;
 using DemoApp.Core.View;
-using DemoApp.ThingsOnShelfGame.States;
-using DemoApp.WhatIsDifferentGame.States;
 using HSM;
 
 namespace DemoApp.Core.States
 {
     public class GameTaskState: HSMState
     {
-
-        private Dictionary<GameType, HSMState> statesByGame;
         
-        public override void OnStateInit()
+        public override string Name => "GameTask";
+
+        private Dictionary<GameConfig, HSMState> childStatesByGameConfig;
+        
+        protected override void AddChildStates()
         {
-            base.OnStateInit();
-            this.name = "GameTask";
-
-            this.statesByGame = new Dictionary<GameType, HSMState>
+            // podstavy vytvoříme pro všechny typy her podle configu:
+            
+            this.childStatesByGameConfig = new Dictionary<GameConfig, HSMState>();
+            
+            GetModel<IApp>().Games.ForEach(config =>
             {
-                [GameType.ThingsOnShelfGame] = new ThingsOnShelfGameTaskState(),
-                [GameType.WhatIsDifferentGame] = new WhatIsDifferentGameTaskState()
-            };
-
-            foreach (var keyValuePair in this.statesByGame)
-            {
-                AddChildState(keyValuePair.Value);
-            }
+                AddChildState(this.childStatesByGameConfig[config] = config.CreateTaskState());
+            });
         }
 
         public override void OnStateEnter()
@@ -35,7 +30,7 @@ namespace DemoApp.Core.States
 
             ForEachViewComponent<IStartTask>(c => c.StartTask());
             
-            SwitchState(this.statesByGame[GetModel<IApp>().CurrentGameType]);
+            SwitchState(this.childStatesByGameConfig[GetModel<IApp>().CurrentGame]);
         }
 
         public override void OnStateExit()

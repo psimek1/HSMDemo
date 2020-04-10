@@ -28,17 +28,14 @@ namespace DemoApp.Core.States
         public int TotalTaskCount { get; private set; }
         public int CurrentTaskIndex { get; private set; }
 
+        public override string Name => "Game";
+        
         private GameMenuState gameMenuState;
         private GameTaskState gameTaskState;
         private GameNextTaskState gameNextTaskState;
-        
 
-        public override void OnStateInit()
+        protected override void AddChildStates()
         {
-            base.OnStateInit();
-
-            this.name = "Game";
-
             AddChildState(this.gameMenuState = new GameMenuState());
             AddChildState(this.gameTaskState = new GameTaskState());
             AddChildState(this.gameNextTaskState = new GameNextTaskState());
@@ -48,7 +45,7 @@ namespace DemoApp.Core.States
         {
             base.OnStateEnter();
 
-            ForEachViewComponent<IInitGame>(c => c.InitGame(GetModel<IApp>().CurrentGameType));
+            ForEachViewComponent<IInitGame>(c => c.InitGame(GetModel<IApp>().CurrentGame));
 
             // v tomto demu přeskakujeme menu (resp. logiku výběru tasku) a jdeme rovnou na task:
 

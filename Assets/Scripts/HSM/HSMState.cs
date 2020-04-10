@@ -22,8 +22,26 @@ namespace HSM
             get => this.parentState;
             private set => this.parentState = value;
         }
-        public override string FullName => this.parentState != null ? this.parentState.FullName + "." + this.name : this.name;
+        public override string FullName => this.parentState != null ? this.parentState.FullName + "." + this.Name : this.Name;
 
+        internal override void Init(HSMManager hsmManager)
+        {
+            base.Init(hsmManager);
+            
+            AddChildStates();
+            AddModules();
+        }
+
+        protected virtual void AddChildStates()
+        {
+            
+        }
+
+        protected virtual void AddModules()
+        {
+            
+        }
+        
         protected void AddChildState(HSMState state)
         {
             if (!this.childStates.Contains(state))

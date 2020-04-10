@@ -5,7 +5,7 @@ namespace DemoApp.ThingsOnShelfGame.View
 {
     public interface IInitThingsOnShelfTask
     {
-        void InitThingsOnShelfTask(ThingsSet thingsSet);
+        void InitThingsOnShelfTask(ThingsOnShelfGameTaskConfig thingsOnShelfGameTaskConfig);
     }
 
     public interface IEnableInput

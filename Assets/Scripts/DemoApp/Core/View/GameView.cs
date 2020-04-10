@@ -1,5 +1,6 @@
-﻿using System;
-using DemoApp.Core.Data;
+﻿using DemoApp.Core.Data;
+using DemoApp.ThingsOnShelfGame.Data;
+using DemoApp.WhatIsDifferentGame.Data;
 using HSM;
 using UnityEngine;
 
@@ -22,12 +23,12 @@ namespace DemoApp.Core.View
             this.nextTask.SetActive(false);
         }
 
-        public void InitGame(GameType gameType)
+        public void InitGame(GameConfig gameConfig)
         {
             // Tady samozřejmě bude nějaké inteligentnější loadování herních modulů.
             
-            this.thingsOnShelfGame.SetActive(gameType == GameType.ThingsOnShelfGame);
-            this.whatIsDifferentGame.SetActive(gameType == GameType.WhatIsDifferentGame);
+            this.thingsOnShelfGame.SetActive(gameConfig is ThingsOnShelfGameConfig);
+            this.whatIsDifferentGame.SetActive(gameConfig is WhatIsDifferentGameConfig);
         }
 
         public void ShowNextTaskMenu()

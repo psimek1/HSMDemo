@@ -6,11 +6,7 @@
      public class GameNextTaskState: HSMState
      {
          
-         public override void OnStateInit()
-         {
-             base.OnStateInit();
-             this.name = "gameNextTask";
-         }
+         public override string Name => "GameNextTask";
  
          public override void OnStateEnter()
          {

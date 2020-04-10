@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using DemoApp.Core.Data;
 
 namespace DemoApp.ThingsOnShelfGame.Data
 {
-    public class ThingsSet
+    public class ThingsOnShelfGameTaskConfig: GameTaskConfig
     {
 
         public List<int> Values { get; set; }
