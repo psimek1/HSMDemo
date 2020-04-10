@@ -1,4 +1,5 @@
 ﻿using DemoApp.Core.Actions;
+using DemoApp.Core.Data;
 using DemoApp.Core.View;
 using HSM;
 
@@ -7,11 +8,15 @@ namespace DemoApp.Core.States
 
     public interface IGame
     {
-        bool IsFirstTask { get; }
-        
+      
         int TotalTaskCount { get; }
         
         int CurrentTaskIndex { get; }
+        
+        GameTaskConfig CurrentGameTask { get; }
+        
+        bool IsFirstTask { get; }
+        
     }
 
     /**
@@ -24,11 +29,15 @@ namespace DemoApp.Core.States
     public class GameState : HSMState, IGame
     {
 
-        public bool IsFirstTask { get; private set; }
-        public int TotalTaskCount { get; private set; }
+        public override string Name => "Game";
+        
+        public int TotalTaskCount => GetModel<IApp>().CurrentGame.Tasks.Count;
+        
         public int CurrentTaskIndex { get; private set; }
 
-        public override string Name => "Game";
+        public GameTaskConfig CurrentGameTask => GetModel<IApp>().CurrentGame.Tasks[this.CurrentTaskIndex];
+        
+        public bool IsFirstTask { get; private set; }
         
         private GameMenuState gameMenuState;
         private GameTaskState gameTaskState;
@@ -45,17 +54,22 @@ namespace DemoApp.Core.States
         {
             base.OnStateEnter();
 
-            ForEachViewComponent<IInitGame>(c => c.InitGame(GetModel<IApp>().CurrentGame));
+            ForEachViewComponent<IStartGame>(c => c.StartGame(GetModel<IApp>().CurrentGame));
 
             // v tomto demu přeskakujeme menu (resp. logiku výběru tasku) a jdeme rovnou na task:
 
             this.IsFirstTask = true;
-            this.TotalTaskCount = 10;
             this.CurrentTaskIndex = 0;
-            
             SwitchState(this.gameTaskState);
         }
-        
+
+        public override void OnStateExit()
+        {
+            base.OnStateExit();
+            
+            ForEachViewComponent<IEndGame>(c => c.EndGame());
+        }
+
         public override void HandleAction(HSMAction action)
         {
             base.HandleAction(action);
@@ -63,16 +77,14 @@ namespace DemoApp.Core.States
             if (action is TaskFinishedAction taskFinishedAction)
             {
                 SwitchState(this.gameNextTaskState);
-                
                 action.SetHandled();
             }
             
             else if (action is NextTaskRequestAction)
             {
                 this.IsFirstTask = false;
-                
+                this.CurrentTaskIndex++;
                 SwitchState(this.gameTaskState);
-                
                 action.SetHandled();    
             }
             

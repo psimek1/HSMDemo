@@ -8,7 +8,7 @@ namespace DemoApp.WhatIsDifferentGame.Data
         public WhatIsDifferentGameConfig()
         {
 
-            this.Name = "What Is Different?";
+            this.Name = "Co je jinak?";
             
         }
     }

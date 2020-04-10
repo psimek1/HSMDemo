@@ -26,7 +26,7 @@ namespace DemoApp.ThingsOnShelfGame.States
         {
             base.OnStateEnter();
             
-            int correctThingIndex = GetModel<IThingsOnShelfGameTask>().ThingsOnShelfGameTaskConfig.CorrectThingIndex;
+            int correctThingIndex = GetModel<IThingsOnShelfGameTask>().CurrentGameTask.CorrectThingIndex;
             if (GetModel<IThingsOnShelfGameTask>().SelectedThingIndex == correctThingIndex)
             {
                 // success

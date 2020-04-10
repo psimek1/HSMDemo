@@ -28,7 +28,7 @@ namespace DemoApp.ThingsOnShelfGame.View
             for (int i = 0; i < thingsOnShelfGameTaskConfig.Values.Count; i++)
             {
                 this.transform.GetChild(i).gameObject.SetActive(true);
-                yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.1f);
             }
             
             CreateAction<TaskViewReadyAction>().Dispatch();
@@ -39,7 +39,7 @@ namespace DemoApp.ThingsOnShelfGame.View
             for (int i = this.transform.childCount-1; i >= 0; i--)
             {
                 this.transform.GetChild(i).gameObject.SetActive(false);
-                yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.1f);
             }
             
             CreateAction<TaskViewFinishedAction>().Dispatch();

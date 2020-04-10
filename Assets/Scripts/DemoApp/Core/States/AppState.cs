@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using DemoApp.Core.Actions;
 using DemoApp.Core.Data;
 using DemoApp.ThingsOnShelfGame.Data;
 using DemoApp.WhatIsDifferentGame.Data;
@@ -43,7 +44,7 @@ namespace DemoApp.Core.States
             
             this.UserNick = "DemoUser";
             
-            // konfigurace všech her a jejich tasků (finálně se může např. načítat z konfiguračního souboru)
+            // konfigurace všech her a jejich tasků (finálně se může např. načítat z konfiguračního souboru):
 
             this.Games = new List<GameConfig>()
             {
@@ -58,6 +59,9 @@ namespace DemoApp.Core.States
                     }
                 },
                 new WhatIsDifferentGameConfig()
+                {
+                    // todo
+                }
             };
         }
 
@@ -76,12 +80,21 @@ namespace DemoApp.Core.States
         {
             base.OnStateEnter();
             
-            // v tomto demu přeskakujeme menu a jdeme rovnou do hry:
-
-            this.CurrentGame = this.Games[0];
-            
-            SwitchState(this.gameState);
+            SwitchState(this.menuState);
         }
 
+        public override void HandleAction(HSMAction action)
+        {
+            base.HandleAction(action);
+
+            if (action is GameSelectedAction gameSelectedAction)
+            {
+                this.CurrentGame = this.Games[gameSelectedAction.Index];
+                SwitchState(this.gameState);
+                action.SetHandled();
+            }
+        }
+        
     }
+    
 }

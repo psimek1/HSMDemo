@@ -12,7 +12,7 @@ namespace HSM
         
         public void ForEachViewComponent<T>(Action<T> action) where T: class
         {
-            var viewComponents = GetComponentsInChildren<HSMViewComponent>();
+            var viewComponents = GetComponentsInChildren<HSMViewComponent>(true);
             foreach (var component in viewComponents)
             {
                 if (component is T)

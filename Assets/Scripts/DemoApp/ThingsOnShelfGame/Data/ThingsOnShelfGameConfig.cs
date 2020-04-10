@@ -8,7 +8,7 @@ namespace DemoApp.ThingsOnShelfGame.Data
 
         public ThingsOnShelfGameConfig()
         {
-            this.Name = "Things on Shelf";
+            this.Name = "Věci na poličce";
         }
 
     }

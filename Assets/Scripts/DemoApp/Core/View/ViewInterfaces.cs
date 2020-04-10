@@ -2,10 +2,25 @@
 
 namespace DemoApp.Core.View
 {
-    
-    public interface IInitGame
+
+    public interface IShowMenu
     {
-        void InitGame(GameConfig gameConfig);
+        void ShowMenu();
+    }
+    
+    public interface IHideMenu
+    {
+        void HideMenu();
+    }
+    
+    public interface IStartGame
+    {
+        void StartGame(GameConfig gameConfig);
+    }
+    
+    public interface IEndGame
+    {
+        void EndGame();
     }
 
     public interface IStartTask

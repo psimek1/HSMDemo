@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace DemoApp.Core.View
 {
-    public class GameView : HSMViewComponent, IInitGame, IShowNextTaskMenu
+    public class GameView : HSMViewComponent, IStartGame, IShowNextTaskMenu
     {
 
         [SerializeField]
@@ -23,7 +23,7 @@ namespace DemoApp.Core.View
             this.nextTask.SetActive(false);
         }
 
-        public void InitGame(GameConfig gameConfig)
+        public void StartGame(GameConfig gameConfig)
         {
             // Tady samozřejmě bude nějaké inteligentnější loadování herních modulů.
             

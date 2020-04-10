@@ -26,7 +26,7 @@ namespace DemoApp.ThingsOnShelfGame.States
             
             // Zobrazení grafiky úkolu:
 
-            ForEachViewComponent<IInitThingsOnShelfTask>(c => c.InitThingsOnShelfTask(GetModel<IThingsOnShelfGameTask>().ThingsOnShelfGameTaskConfig));
+            ForEachViewComponent<IInitThingsOnShelfTask>(c => c.InitThingsOnShelfTask(GetModel<IThingsOnShelfGameTask>().CurrentGameTask));
             
             // Následně čekáme na TaskViewReadyAction od view
         }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using DemoApp.Core.States;
 using DemoApp.ThingsOnShelfGame.Data;
 using HSM;
 
@@ -8,7 +9,7 @@ namespace DemoApp.ThingsOnShelfGame.States
     public interface IThingsOnShelfGameTask
     {
         
-        ThingsOnShelfGameTaskConfig ThingsOnShelfGameTaskConfig { get; }
+        ThingsOnShelfGameTaskConfig CurrentGameTask { get; }
         
         int SelectedThingIndex { get; }
         
@@ -17,11 +18,12 @@ namespace DemoApp.ThingsOnShelfGame.States
     public class ThingsOnShelfGameTaskState: HSMState, IThingsOnShelfGameTask
     {
 
-        public ThingsOnShelfGameTaskConfig ThingsOnShelfGameTaskConfig { get; private set; }
-
-        public int SelectedThingIndex { get; private set; }
         public override string Name => "ThingsOnShelfGameTask";
+
+        public ThingsOnShelfGameTaskConfig CurrentGameTask => GetModel<IGame>().CurrentGameTask as ThingsOnShelfGameTaskConfig;
         
+        public int SelectedThingIndex { get; private set; }
+
         private InitState initState;
         private InputState inputState;
         private ResultState resultState;
@@ -39,8 +41,6 @@ namespace DemoApp.ThingsOnShelfGame.States
         {
             base.OnStateEnter();
 
-            // nakonfigurování úkolu (finálně se nakonfiguruje podle obtížnosti a dalších parametrů získaných z IGame...)
-            this.ThingsOnShelfGameTaskConfig = new ThingsOnShelfGameTaskConfig {Values = new List<int> {0,0,0,1,0,0}};
             this.SelectedThingIndex = -1;
 
             SwitchState(this.initState);
@@ -50,7 +50,6 @@ namespace DemoApp.ThingsOnShelfGame.States
         {
             base.OnStateExit();
 
-            this.ThingsOnShelfGameTaskConfig = null;
             this.SelectedThingIndex = -1;
         }
 

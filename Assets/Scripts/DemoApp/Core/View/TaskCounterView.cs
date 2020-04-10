@@ -1,4 +1,5 @@
-﻿using HSM;
+﻿using DemoApp.Core.States;
+using HSM;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +18,8 @@ namespace DemoApp.Core.View
 
         public void StartTask()
         {
-            this.text.text = "Úkol";
+            var model = GetModel<IGame>();
+            this.text.text = "Úkol " + (model.CurrentTaskIndex+1) + " / " + model.TotalTaskCount;
         }
 
         public void EndTask()
