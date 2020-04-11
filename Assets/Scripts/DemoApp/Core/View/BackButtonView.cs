@@ -8,17 +8,17 @@ namespace DemoApp.Core.View
     {
         public void Awake()
         {
-            this.gameObject.SetActive(false);
+            Deactivate();
         }
 
         public void ShowMenu()
         {
-            this.gameObject.SetActive(false);
+            Deactivate();
         }
 
         public void HideMenu()
         {
-            this.gameObject.SetActive(true);
+            Activate();
         }
 
         public void OnPointerClick(PointerEventData eventData)

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace HSM
+namespace Utils
 {
     public class AsyncCallQueue
     {

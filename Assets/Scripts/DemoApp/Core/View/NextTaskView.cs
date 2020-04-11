@@ -6,20 +6,25 @@ namespace DemoApp.Core.View
 {
     public class NextTaskView : HSMViewComponent, IPointerClickHandler, IShowNextTaskMenu, IHideNextTaskMenu
     {
-        
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            CreateAction<NextTaskRequestAction>().Dispatch();
-        }
 
+        public void Awake()
+        {
+            Deactivate();
+        }
+        
         public void ShowNextTaskMenu()
         {
-            this.gameObject.SetActive(true);
+            Activate();
         }
 
         public void HideNextTaskMenu()
         {
-            this.gameObject.SetActive(false);
+            Deactivate();
+        }
+        
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            CreateAction<NextTaskRequestAction>().Dispatch();
         }
         
     }

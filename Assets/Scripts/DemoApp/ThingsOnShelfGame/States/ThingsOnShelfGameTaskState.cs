@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using DemoApp.Core.States;
+﻿using DemoApp.Core.States;
 using DemoApp.ThingsOnShelfGame.Data;
 using HSM;
 

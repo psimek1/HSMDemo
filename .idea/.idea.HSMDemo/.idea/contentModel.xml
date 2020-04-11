@@ -31,12 +31,14 @@
               <e p="View" t="Include">
                 <e p="AppViewRoot.cs" t="Include" />
                 <e p="BackButtonView.cs" t="Include" />
+                <e p="GameTaskView.cs" t="Include" />
                 <e p="GameTitleView.cs" t="Include" />
                 <e p="GameView.cs" t="Include" />
                 <e p="MenuItemView.cs" t="Include" />
                 <e p="MenuView.cs" t="Include" />
                 <e p="MouseCharacterView.cs" t="Include" />
                 <e p="NextTaskView.cs" t="Include" />
+                <e p="StartTaskButtonView.cs" t="Include" />
                 <e p="TaskCounterView.cs" t="Include" />
                 <e p="ViewInterfaces.cs" t="Include" />
               </e>
@@ -81,6 +83,7 @@
           </e>
           <e p="Utils" t="Include">
             <e p="AsyncCallQueue.cs" t="Include" />
+            <e p="ViewComponent.cs" t="Include" />
           </e>
         </e>
       </e>

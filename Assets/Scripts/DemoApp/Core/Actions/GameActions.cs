@@ -3,6 +3,19 @@
 namespace DemoApp.Core.Actions
 {
 
+    public class TaskSelectedAction : HSMAction
+    {
+        
+        public int Index { get; private set; }
+
+        public TaskSelectedAction WithIndex(int value)
+        {
+            this.Index = value;
+            return this;
+        }
+        
+    }
+    
     public class TaskFinishedAction: HSMAction
     {
         

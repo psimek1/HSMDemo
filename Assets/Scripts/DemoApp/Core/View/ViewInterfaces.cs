@@ -23,6 +23,16 @@ namespace DemoApp.Core.View
         void EndGame();
     }
 
+    public interface IShowGameMenu
+    {
+        void ShowGameMenu();
+    }
+
+    public interface IHideGameMenu
+    {
+        void HideGameMenu();
+    }
+
     public interface IStartTask
     {
         void StartTask();

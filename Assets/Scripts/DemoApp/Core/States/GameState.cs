@@ -56,11 +56,9 @@ namespace DemoApp.Core.States
 
             ForEachViewComponent<IStartGame>(c => c.StartGame(GetModel<IApp>().CurrentGame));
 
-            // v tomto demu přeskakujeme menu (resp. logiku výběru tasku) a jdeme rovnou na task:
-
             this.IsFirstTask = true;
-            this.CurrentTaskIndex = 0;
-            SwitchState(this.gameTaskState);
+            
+            SwitchState(this.gameMenuState);
         }
 
         public override void OnStateExit()
@@ -74,9 +72,23 @@ namespace DemoApp.Core.States
         {
             base.HandleAction(action);
 
+            if (action is TaskSelectedAction taskSelectedAction)
+            {
+                this.CurrentTaskIndex = taskSelectedAction.Index;
+                SwitchState(this.gameTaskState);
+                action.SetHandled();
+            }
+            
             if (action is TaskFinishedAction taskFinishedAction)
             {
-                SwitchState(this.gameNextTaskState);
+                if (this.CurrentTaskIndex == this.TotalTaskCount - 1)
+                {
+                    SwitchState(this.gameMenuState);
+                }
+                else
+                {
+                    SwitchState(this.gameNextTaskState);
+                }
                 action.SetHandled();
             }
             

@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+﻿using Utils;
 
 namespace HSM
 {
-    public class HSMViewComponent: MonoBehaviour
+    public class HSMViewComponent: ViewComponent
     {
 
         private HSMViewRoot hsmViewRoot;
