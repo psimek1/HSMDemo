@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using DemoApp.Core.Actions;
+using DemoApp.Core.View;
 using DemoApp.ThingsOnShelfGame.Data;
 using HSM;
 using UnityEngine;
 
 namespace DemoApp.ThingsOnShelfGame.View
 {
-    public class ThingsView : HSMViewComponent, IInitThingsOnShelfTask, IFinishThingsOnShelfTask
+    public class ThingsView : HSMViewComponent, IInitThingsOnShelfTask, IFinishThingsOnShelfTask, IExitTask
     {
         public void InitThingsOnShelfTask(ThingsOnShelfGameTaskConfig thingsOnShelfGameTaskConfig)
         {
@@ -16,6 +17,11 @@ namespace DemoApp.ThingsOnShelfGame.View
         public void FinishThingsOnShelfTask()
         {
             StartCoroutine(FinishTaskCoroutine());
+        }
+        
+        public void ExitTask()
+        {
+            StopAllCoroutines();
         }
         
         private IEnumerator InitTaskCoroutine(ThingsOnShelfGameTaskConfig thingsOnShelfGameTaskConfig)

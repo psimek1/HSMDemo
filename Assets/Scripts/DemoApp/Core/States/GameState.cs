@@ -54,7 +54,7 @@ namespace DemoApp.Core.States
         {
             base.OnStateEnter();
 
-            ForEachViewComponent<IStartGame>(c => c.StartGame(GetModel<IApp>().CurrentGame));
+            ForEachViewComponent<IEnterGame>(c => c.EnterGame(GetModel<IApp>().CurrentGame));
 
             this.IsFirstTask = true;
             
@@ -65,7 +65,7 @@ namespace DemoApp.Core.States
         {
             base.OnStateExit();
             
-            ForEachViewComponent<IEndGame>(c => c.EndGame());
+            ForEachViewComponent<IExitGame>(c => c.ExitGame());
         }
 
         public override void HandleAction(HSMAction action)
@@ -81,6 +81,8 @@ namespace DemoApp.Core.States
             
             if (action is TaskFinishedAction taskFinishedAction)
             {
+                this.IsFirstTask = false;
+                
                 if (this.CurrentTaskIndex == this.TotalTaskCount - 1)
                 {
                     SwitchState(this.gameMenuState);
@@ -94,10 +96,21 @@ namespace DemoApp.Core.States
             
             else if (action is NextTaskRequestAction)
             {
-                this.IsFirstTask = false;
                 this.CurrentTaskIndex++;
                 SwitchState(this.gameTaskState);
                 action.SetHandled();    
+            }
+
+            else if (action is ExitTaskAction)
+            {
+                SwitchState(this.gameMenuState);
+                action.SetHandled();
+            }
+            
+            else if (action is BackAction)
+            {
+                CreateAction<ExitGameAction>().Dispatch();
+                action.SetHandled();
             }
             
         }

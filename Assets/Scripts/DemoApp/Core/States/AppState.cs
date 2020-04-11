@@ -60,7 +60,15 @@ namespace DemoApp.Core.States
                 },
                 new WhatIsDifferentGameConfig()
                 {
-                    // todo
+                    Tasks = new List<GameTaskConfig>()
+                    {
+                        new WhatIsDifferentGameTaskConfig(),
+                        new WhatIsDifferentGameTaskConfig(),
+                        new WhatIsDifferentGameTaskConfig(),
+                        new WhatIsDifferentGameTaskConfig(),
+                        new WhatIsDifferentGameTaskConfig(),
+                        new WhatIsDifferentGameTaskConfig()
+                    }
                 }
             };
         }
@@ -93,6 +101,21 @@ namespace DemoApp.Core.States
                 SwitchState(this.gameState);
                 action.SetHandled();
             }
+            
+            else if (action is ExitGameAction)
+            {
+                this.CurrentGame = null;
+                SwitchState(this.menuState);
+                action.SetHandled();
+            }
+            
+            else if (action is HomeAction)
+            {
+                this.CurrentGame = null;
+                SwitchState(this.menuState);
+                action.SetHandled();
+            }
+            
         }
         
     }

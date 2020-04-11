@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace DemoApp.Core.View
 {
-    public class GameTaskView : HSMViewComponent, IStartGame, IStartTask, IEndTask
+    public class GameTaskView : HSMViewComponent, IEnterGame, IEnterTask, IExitTask
     {
 
         [SerializeField]
@@ -20,7 +20,7 @@ namespace DemoApp.Core.View
             Deactivate();
         }
 
-        public void StartGame(GameConfig gameConfig)
+        public void EnterGame(GameConfig gameConfig)
         {
             // Tady samozřejmě bude nějaké inteligentnější loadování herních modulů.
             
@@ -28,12 +28,12 @@ namespace DemoApp.Core.View
             this.whatIsDifferentGame.SetActive(gameConfig is WhatIsDifferentGameConfig);
         }
 
-        public void StartTask()
+        public void EnterTask()
         {
             Activate();
         }
 
-        public void EndTask()
+        public void ExitTask()
         {
             Deactivate();
         }

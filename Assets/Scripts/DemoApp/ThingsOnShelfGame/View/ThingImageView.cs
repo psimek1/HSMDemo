@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using DemoApp.Core.View;
 using DemoApp.ThingsOnShelfGame.Data;
 using HSM;
 using UnityEngine;
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 
 namespace DemoApp.ThingsOnShelfGame.View
 {
-    public class ThingImageView : HSMViewComponent, IInitThingsOnShelfTask, IEnableInput, IDisableInput, IShowSolution, IFinishThingsOnShelfTask, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+    public class ThingImageView : HSMViewComponent, IInitThingsOnShelfTask, IEnableInput, IDisableInput, IShowSolution, IFinishThingsOnShelfTask, IExitTask, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
 
         [SerializeField]
@@ -27,6 +28,8 @@ namespace DemoApp.ThingsOnShelfGame.View
         public void OnEnable()
         {
             this.border.SetActive(false);
+            
+            this.isInputEnabled = false;
         }
 
         public void InitThingsOnShelfTask(ThingsOnShelfGameTaskConfig thingsOnShelfGameTaskConfig)
@@ -59,6 +62,11 @@ namespace DemoApp.ThingsOnShelfGame.View
             this.border.SetActive(false);
         }
        
+        public void ExitTask()
+        {
+            StopAllCoroutines();
+        }
+        
         public void OnPointerEnter(PointerEventData eventData)
         {
             if (this.isInputEnabled)

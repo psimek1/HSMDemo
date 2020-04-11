@@ -27,4 +27,5 @@ namespace DemoApp.ThingsOnShelfGame.View
     {
         void FinishThingsOnShelfTask();
     }
+    
 }

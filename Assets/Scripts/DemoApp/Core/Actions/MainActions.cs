@@ -15,7 +15,17 @@ namespace DemoApp.Core.Actions
         
     }
 
+    public class ExitGameAction : HSMAction
+    {
+        
+    }
+    
     public class BackAction : HSMAction
+    {
+        
+    }
+
+    public class HomeAction : HSMAction
     {
         
     }

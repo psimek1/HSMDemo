@@ -16,6 +16,11 @@ namespace DemoApp.Core.States
             {
                 ForEachViewComponent<IPlayMouseSpeech>(c => c.PlayMouseSpeech(playMouseSpeechAction.Speech));
             }
+            
+            else if (action is StopMouseSpeechAction)
+            {
+                ForEachViewComponent<IStopMouseSpeech>(c => c.StopMouseSpeech());
+            }
         }
         
     }

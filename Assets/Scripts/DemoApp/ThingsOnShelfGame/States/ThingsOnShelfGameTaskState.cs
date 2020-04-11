@@ -45,13 +45,6 @@ namespace DemoApp.ThingsOnShelfGame.States
             SwitchState(this.initState);
         }
 
-        public override void OnStateExit()
-        {
-            base.OnStateExit();
-
-            this.SelectedThingIndex = -1;
-        }
-
         public override void HandleAction(HSMAction action)
         {
             base.HandleAction(action);

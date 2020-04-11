@@ -25,5 +25,10 @@ namespace DemoApp.Core.Actions
     {
         
     }
+
+    public class StopMouseSpeechAction : MouseSpeechAction
+    {
+        
+    }
     
 }

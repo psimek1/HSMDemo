@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace DemoApp.Core.View
 {
-    public class TaskCounterView : HSMViewComponent, IStartTask, IEndTask
+    public class TaskCounterView : HSMViewComponent, IEnterTask, IExitTask
     {
 
         [SerializeField]
@@ -16,13 +16,13 @@ namespace DemoApp.Core.View
             this.text.text = "";
         }
 
-        public void StartTask()
+        public void EnterTask()
         {
             var model = GetModel<IGame>();
             this.text.text = "Úkol " + (model.CurrentTaskIndex+1) + " / " + model.TotalTaskCount;
         }
 
-        public void EndTask()
+        public void ExitTask()
         {
             this.text.text = "";
         }

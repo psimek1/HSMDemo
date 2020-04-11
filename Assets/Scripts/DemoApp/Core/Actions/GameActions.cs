@@ -39,6 +39,10 @@ namespace DemoApp.Core.Actions
     {
         
     }
-    
+
+    public class ExitTaskAction : HSMAction
+    {
+        
+    }
     
 }

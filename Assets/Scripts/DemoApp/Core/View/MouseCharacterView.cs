@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace DemoApp.Core.View
 {
-    public class MouseCharacterView : HSMViewComponent, IPlayMouseSpeech
+    public class MouseCharacterView : HSMViewComponent, IPlayMouseSpeech, IStopMouseSpeech
     {
 
         [SerializeField]
@@ -18,16 +18,28 @@ namespace DemoApp.Core.View
             StartCoroutine(PlayMouseSpeechCoroutine(speech));
         }
 
+        public void StopMouseSpeech()
+        {
+            StopAllCoroutines();
+
+            Say("");
+        }
+        
         private IEnumerator PlayMouseSpeechCoroutine(MouseSpeech speech)
         {
-            this.text.text = "Myšák říká: " + speech.Text;
+            Say("Myšák říká: " + speech.Text);
             
             yield return new WaitForSeconds(3);
 
-            this.text.text = "";
+            Say("");
             
             CreateAction<MouseSpeechFinishedAction>().WithSpeech(speech).Dispatch();
         }
-        
+
+        private void Say(string text)
+        {
+            this.text.text = text;
+        }
+       
     }
 }

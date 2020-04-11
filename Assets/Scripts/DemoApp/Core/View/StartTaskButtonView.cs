@@ -1,4 +1,5 @@
 ﻿using DemoApp.Core.Actions;
+using DemoApp.Core.States;
 using HSM;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -24,7 +25,10 @@ namespace DemoApp.Core.View
         
         public void ShowGameMenu()
         {
-            Activate();
+            if (this.index < GetModel<IApp>().CurrentGame.Tasks.Count)
+            {
+                Activate();
+            }
         }
 
         public void HideGameMenu()

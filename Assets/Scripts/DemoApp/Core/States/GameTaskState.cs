@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using DemoApp.Core.Actions;
 using DemoApp.Core.Data;
 using DemoApp.Core.View;
 using HSM;
@@ -28,7 +29,7 @@ namespace DemoApp.Core.States
         {
             base.OnStateEnter();
 
-            ForEachViewComponent<IStartTask>(c => c.StartTask());
+            ForEachViewComponent<IEnterTask>(c => c.EnterTask());
             
             SwitchState(this.childStatesByGameConfig[GetModel<IApp>().CurrentGame]);
         }
@@ -37,7 +38,25 @@ namespace DemoApp.Core.States
         {
             base.OnStateExit();
 
-            ForEachViewComponent<IEndTask>(c => c.EndTask());
+            ForEachViewComponent<IExitTask>(c => c.ExitTask());
+            
+            // Pokud mluví myšák (což se může stát při okamžitém vyskočení z tasku pomocí Back nebo Home), tak ho stopneme:
+
+            CreateAction<StopMouseSpeechAction>().Dispatch();
         }
+
+        public override void HandleAction(HSMAction action)
+        {
+            base.HandleAction(action);
+
+            if (action is BackAction)
+            {
+                CreateAction<ExitTaskAction>().Dispatch();
+                
+                action.SetHandled();
+            }
+            
+        }
+        
     }
 }

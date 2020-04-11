@@ -3,7 +3,7 @@ using HSM;
 
 namespace DemoApp.Core.View
 {
-    public class GameView : HSMViewComponent, IStartGame, IEndGame
+    public class GameView : HSMViewComponent, IEnterGame, IExitGame
     {
 
         public void Awake()
@@ -11,12 +11,12 @@ namespace DemoApp.Core.View
             Deactivate();
         }
 
-        public void StartGame(GameConfig gameConfig)
+        public void EnterGame(GameConfig gameConfig)
         {
             Activate();
         }
 
-        public void EndGame()
+        public void ExitGame()
         {
             Deactivate();
         }

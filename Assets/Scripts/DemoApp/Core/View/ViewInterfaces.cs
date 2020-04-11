@@ -13,14 +13,14 @@ namespace DemoApp.Core.View
         void HideMenu();
     }
     
-    public interface IStartGame
+    public interface IEnterGame
     {
-        void StartGame(GameConfig gameConfig);
+        void EnterGame(GameConfig gameConfig);
     }
     
-    public interface IEndGame
+    public interface IExitGame
     {
-        void EndGame();
+        void ExitGame();
     }
 
     public interface IShowGameMenu
@@ -33,14 +33,14 @@ namespace DemoApp.Core.View
         void HideGameMenu();
     }
 
-    public interface IStartTask
+    public interface IEnterTask
     {
-        void StartTask();
+        void EnterTask();
     }
     
-    public interface IEndTask
+    public interface IExitTask
     {
-        void EndTask();
+        void ExitTask();
     }
     
     public interface IShowNextTaskMenu
@@ -56,6 +56,11 @@ namespace DemoApp.Core.View
     public interface IPlayMouseSpeech
     {
         void PlayMouseSpeech(MouseSpeech speech);
+    }
+    
+    public interface IStopMouseSpeech
+    {
+        void StopMouseSpeech();
     }
     
 }

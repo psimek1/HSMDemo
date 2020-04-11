@@ -1,4 +1,5 @@
-﻿ using DemoApp.Core.View;
+﻿ using DemoApp.Core.Actions;
+ using DemoApp.Core.View;
  using HSM;
  
  namespace DemoApp.Core.States
@@ -20,6 +21,18 @@
              base.OnStateExit();
              
              ForEachViewComponent<IHideNextTaskMenu>(c => c.HideNextTaskMenu());
+         }
+
+         public override void HandleAction(HSMAction action)
+         {
+             base.HandleAction(action);
+             
+             if (action is BackAction)
+             {
+                 CreateAction<ExitTaskAction>().Dispatch();
+                
+                 action.SetHandled();
+             }
          }
          
      }

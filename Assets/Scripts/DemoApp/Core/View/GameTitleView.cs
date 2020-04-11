@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace DemoApp.Core.View
 {
-    public class GameTitleView : HSMViewComponent, IStartGame, IEndGame
+    public class GameTitleView : HSMViewComponent, IEnterGame, IExitGame
     {
 
         [SerializeField]
@@ -17,12 +17,12 @@ namespace DemoApp.Core.View
             this.text.text = "";
         }
 
-        public void StartGame(GameConfig gameConfig)
+        public void EnterGame(GameConfig gameConfig)
         {
             this.text.text = gameConfig.Name;
         }
 
-        public void EndGame()
+        public void ExitGame()
         {
             this.text.text = "";
         }
