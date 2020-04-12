@@ -28,7 +28,7 @@ namespace DemoApp.WhatIsDifferentGame.States
 
             if (action is TaskViewFinishedAction)
             {
-                CreateAction<TaskFinishedAction>().WithSuccess().Dispatch();
+                CreateAction<TaskFinishedAction>().WithSuccess(true).Dispatch();
                 
                 action.SetHandled();
             }

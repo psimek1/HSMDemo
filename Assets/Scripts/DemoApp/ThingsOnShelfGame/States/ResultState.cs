@@ -1,5 +1,6 @@
 ﻿using DemoApp.Core.Actions;
 using DemoApp.Core.Data;
+using DemoApp.ThingsOnShelfGame.Actions;
 using DemoApp.ThingsOnShelfGame.View;
 using HSM;
 
@@ -26,8 +27,7 @@ namespace DemoApp.ThingsOnShelfGame.States
         {
             base.OnStateEnter();
             
-            int correctThingIndex = GetModel<IThingsOnShelfGameTask>().CurrentGameTask.CorrectThingIndex;
-            if (GetModel<IThingsOnShelfGameTask>().SelectedThingIndex == correctThingIndex)
+            if (GetModel<IThingsOnShelfGameTask>().IsSuccess)
             {
                 // success
                 CreateAction<PlayMouseSpeechAction>().WithSpeech(this.successSpeech).Dispatch();
@@ -36,7 +36,7 @@ namespace DemoApp.ThingsOnShelfGame.States
             {
                 // fail
                 CreateAction<PlayMouseSpeechAction>().WithSpeech(this.failSpeech).Dispatch();
-                ForEachViewComponent<IShowSolution>(c => c.ShowSolution(correctThingIndex));
+                ForEachViewComponent<IShowSolution>(c => c.ShowSolution(GetModel<IThingsOnShelfGameTask>().CurrentGameTask.CorrectThingIndex));
             }
         }
 

@@ -1,31 +1,47 @@
-﻿using DemoApp.Core.Data;
-using DemoApp.ThingsOnShelfGame.Data;
-using DemoApp.WhatIsDifferentGame.Data;
+﻿using System.Collections.Generic;
+using DemoApp.Core.Data;
+using DemoApp.Core.States;
 using HSM;
 using UnityEngine;
 
 namespace DemoApp.Core.View
 {
-    public class GameTaskView : HSMViewComponent, IEnterGame, IEnterTask, IExitTask
+    public class GameTaskView : HSMViewComponent, IEnterApp, IEnterGame, IEnterTask, IExitTask
     {
 
         [SerializeField]
-        private GameObject thingsOnShelfGame;
+        private GameObject[] gameTaskPrefabs;
 
-        [SerializeField]
-        private GameObject whatIsDifferentGame;
-
+        private Dictionary<GameConfig, GameObject> gameTaskGOsByGameConfig;
+        
         public void Awake()
         {
             Deactivate();
         }
 
-        public void EnterGame(GameConfig gameConfig)
+        public void EnterApp()
         {
-            // Tady samozřejmě bude nějaké inteligentnější loadování herních modulů.
+            // Tady samozřejmě bude nějaké inteligentnější propojení mezi loadovanými herními moduly a configem.
+            // Zde předpokládáme, že prefaby v poli gameTaskPrefabs odpovídají (počtem a pořadím) hrám v configu.
             
-            this.thingsOnShelfGame.SetActive(gameConfig is ThingsOnShelfGameConfig);
-            this.whatIsDifferentGame.SetActive(gameConfig is WhatIsDifferentGameConfig);
+            var games = GetModel<IApp>().Games;
+
+            this.gameTaskGOsByGameConfig = new Dictionary<GameConfig, GameObject>();
+            
+            for (int i = 0; i < games.Count; i++)
+            {
+                this.gameTaskGOsByGameConfig[games[i]] = Instantiate(this.gameTaskPrefabs[i], this.transform);
+            }
+        }
+        
+        public void EnterGame()
+        {
+            var currentGame = GetModel<IApp>().CurrentGame;
+            
+            foreach (var kvp in this.gameTaskGOsByGameConfig)
+            {
+                kvp.Value.SetActive(kvp.Key == currentGame);
+            }
         }
 
         public void EnterTask()

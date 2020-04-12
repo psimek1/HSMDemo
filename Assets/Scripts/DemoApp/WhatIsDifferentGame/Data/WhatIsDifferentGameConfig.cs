@@ -5,11 +5,8 @@ namespace DemoApp.WhatIsDifferentGame.Data
 {
     public class WhatIsDifferentGameConfig : GameConfig<WhatIsDifferentGameTaskState>
     {
-        public WhatIsDifferentGameConfig()
-        {
+        
+        public override string Name => "Co je jinak?";
 
-            this.Name = "Co je jinak?";
-            
-        }
     }
 }

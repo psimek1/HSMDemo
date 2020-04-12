@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace DemoApp.Core.View
 {
-    public class StartTaskButtonView : HSMViewComponent, IShowGameMenu, IHideGameMenu, IPointerClickHandler
+    public class StartTaskButtonView : HSMViewComponent, IEnterGameMenu, IExitGameMenu, IPointerClickHandler
     {
 
         [SerializeField]
@@ -23,7 +23,7 @@ namespace DemoApp.Core.View
             this.text.text = "Úkol " + (this.index + 1);
         }
         
-        public void ShowGameMenu()
+        public void EnterGameMenu()
         {
             if (this.index < GetModel<IApp>().CurrentGame.Tasks.Count)
             {
@@ -31,7 +31,7 @@ namespace DemoApp.Core.View
             }
         }
 
-        public void HideGameMenu()
+        public void ExitGameMenu()
         {
             Deactivate();
         }

@@ -7,9 +7,10 @@ namespace DemoApp.Core.Data
     public abstract class GameConfig
     {
         
-        public string Name { get; protected set; }
+        public abstract string Name { get; }
 
         public List<GameTaskConfig> Tasks { get; set; }
+        
         public abstract HSMState CreateTaskState();
 
     }

@@ -1,6 +1,7 @@
 ﻿using DemoApp.Core.Actions;
 using DemoApp.Core.Data;
 using DemoApp.Core.States;
+using DemoApp.ThingsOnShelfGame.Actions;
 using DemoApp.ThingsOnShelfGame.View;
 using HSM;
 
@@ -8,10 +9,9 @@ namespace DemoApp.ThingsOnShelfGame.States
 {
     public class InitState: HSMState
     {
-
-        private MouseSpeech introSpeech;
-        
         public override string Name => "Init";
+        
+        private MouseSpeech introSpeech;
         
         public override void OnStateInit()
         {

@@ -7,17 +7,17 @@ using UnityEngine.UI;
 
 namespace DemoApp.Core.View
 {
-    public class MenuItemView : HSMViewComponent, IShowMenu, IPointerClickHandler
+    public class MenuItemView : HSMViewComponent, IPointerClickHandler
     {
 
         [SerializeField]
         private Text text;
 
-        [SerializeField]
         private int index;
-        
-        public void ShowMenu()
+
+        public void Awake()
         {
+            this.index = IndexInParent;
             this.text.text = GetModel<IApp>().Games[this.index].Name;
         }
 

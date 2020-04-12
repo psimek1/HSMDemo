@@ -3,19 +3,24 @@
 namespace DemoApp.Core.View
 {
 
-    public interface IShowMenu
+    public interface IEnterApp
     {
-        void ShowMenu();
+        void EnterApp();
     }
     
-    public interface IHideMenu
+    public interface IEnterMenu
     {
-        void HideMenu();
+        void EnterMenu();
+    }
+    
+    public interface IExitMenu
+    {
+        void ExitMenu();
     }
     
     public interface IEnterGame
     {
-        void EnterGame(GameConfig gameConfig);
+        void EnterGame();
     }
     
     public interface IExitGame
@@ -23,14 +28,14 @@ namespace DemoApp.Core.View
         void ExitGame();
     }
 
-    public interface IShowGameMenu
+    public interface IEnterGameMenu
     {
-        void ShowGameMenu();
+        void EnterGameMenu();
     }
 
-    public interface IHideGameMenu
+    public interface IExitGameMenu
     {
-        void HideGameMenu();
+        void ExitGameMenu();
     }
 
     public interface IEnterTask

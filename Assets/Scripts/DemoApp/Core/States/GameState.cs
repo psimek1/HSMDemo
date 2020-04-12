@@ -24,7 +24,8 @@ namespace DemoApp.Core.States
      * Celá tato třída může být v jiné konfiguraci nahrazena jinou třídou, která bude řešit alternativní průchod úkoly
      * - např. sekvence úkolů versus výběr úkolu z menu
      * Vždy však musí implementovat IGame pro data, která jsou všem verzím společná
-     * - viz např. IsFirstTask, díky kterému task zjistí, zda je první, a přizpůsobí se tomu (myšák říká úvodní instrukce pouze jednou)
+     * - viz např. IsFirstTask, díky kterému task zjistí, zda je první, a přizpůsobí se tomu (myšák říká úvodní instrukce
+     * pouze jednou v rámci řady úkolů)
      */
     public class GameState : HSMState, IGame
     {
@@ -54,7 +55,7 @@ namespace DemoApp.Core.States
         {
             base.OnStateEnter();
 
-            ForEachViewComponent<IEnterGame>(c => c.EnterGame(GetModel<IApp>().CurrentGame));
+            ForEachViewComponent<IEnterGame>(c => c.EnterGame());
 
             this.IsFirstTask = true;
             
@@ -79,7 +80,7 @@ namespace DemoApp.Core.States
                 action.SetHandled();
             }
             
-            if (action is TaskFinishedAction taskFinishedAction)
+            if (action is TaskFinishedAction)
             {
                 this.IsFirstTask = false;
                 
@@ -116,4 +117,5 @@ namespace DemoApp.Core.States
         }
         
     }
+    
 }

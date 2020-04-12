@@ -1,5 +1,4 @@
-﻿using DemoApp.Core.Actions;
-using DemoApp.ThingsOnShelfGame.View;
+﻿using DemoApp.ThingsOnShelfGame.View;
 using HSM;
 
 namespace DemoApp.ThingsOnShelfGame.States
@@ -16,16 +15,5 @@ namespace DemoApp.ThingsOnShelfGame.States
             ForEachViewComponent<IFinishThingsOnShelfTask>(c => c.FinishThingsOnShelfTask());
         }
 
-        public override void HandleAction(HSMAction action)
-        {
-            base.HandleAction(action);
-            
-            if (action is TaskViewFinishedAction)
-            {
-                CreateAction<TaskFinishedAction>().Dispatch();
-                
-                action.SetHandled();
-            }
-        }
     }
 }

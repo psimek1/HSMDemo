@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using DemoApp.Core.Actions;
 using DemoApp.Core.Data;
+using DemoApp.Core.View;
 using DemoApp.ThingsOnShelfGame.Data;
 using DemoApp.WhatIsDifferentGame.Data;
 using HSM;
@@ -27,13 +28,14 @@ namespace DemoApp.Core.States
      */
     public class AppState: HSMState, IApp
     {
+        
+        public override string Name => "App";
+        
         public string UserNick { get; private set; }
         
         public List<GameConfig> Games { get; private set; }
         
         public GameConfig CurrentGame { get; private set; }
-
-        public override string Name => "App";
 
         private MenuState menuState;
         private GameState gameState;
@@ -87,6 +89,8 @@ namespace DemoApp.Core.States
         public override void OnStateEnter()
         {
             base.OnStateEnter();
+            
+            ForEachViewComponent<IEnterApp>(c => c.EnterApp());
             
             SwitchState(this.menuState);
         }

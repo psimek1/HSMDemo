@@ -1,6 +1,6 @@
 ﻿using System.Collections;
-using DemoApp.Core.Actions;
 using DemoApp.Core.View;
+using DemoApp.ThingsOnShelfGame.Actions;
 using DemoApp.ThingsOnShelfGame.Data;
 using HSM;
 using UnityEngine;

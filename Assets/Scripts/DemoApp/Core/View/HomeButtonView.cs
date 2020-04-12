@@ -4,19 +4,19 @@ using UnityEngine.EventSystems;
 
 namespace DemoApp.Core.View
 {
-    public class HomeButtonView : HSMViewComponent, IShowMenu, IHideMenu, IPointerClickHandler
+    public class HomeButtonView : HSMViewComponent, IEnterMenu, IExitMenu, IPointerClickHandler
     {
         public void Awake()
         {
             Deactivate();
         }
 
-        public void ShowMenu()
+        public void EnterMenu()
         {
             Deactivate();
         }
 
-        public void HideMenu()
+        public void ExitMenu()
         {
             Activate();
         }

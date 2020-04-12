@@ -1,4 +1,5 @@
 ﻿using DemoApp.Core.Data;
+using DemoApp.Core.States;
 using HSM;
 using UnityEngine;
 
@@ -11,10 +12,10 @@ namespace DemoApp.Core.View
         [SerializeField]
         private GameObject startTaskPrefab;
 
-        public void EnterGame(GameConfig gameConfig)
+        public void EnterGame()
         {
 
-            int count = gameConfig.Tasks.Count;
+            int count = GetModel<IApp>().CurrentGame.Tasks.Count;
 
             for (int i = this.transform.childCount; i < count; i++)
             {

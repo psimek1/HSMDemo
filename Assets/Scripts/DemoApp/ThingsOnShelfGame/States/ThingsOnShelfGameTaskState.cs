@@ -1,4 +1,6 @@
-﻿using DemoApp.Core.States;
+﻿using DemoApp.Core.Actions;
+using DemoApp.Core.States;
+using DemoApp.ThingsOnShelfGame.Actions;
 using DemoApp.ThingsOnShelfGame.Data;
 using HSM;
 
@@ -10,7 +12,7 @@ namespace DemoApp.ThingsOnShelfGame.States
         
         ThingsOnShelfGameTaskConfig CurrentGameTask { get; }
         
-        int SelectedThingIndex { get; }
+        bool IsSuccess { get; }
         
     }
     
@@ -21,7 +23,7 @@ namespace DemoApp.ThingsOnShelfGame.States
 
         public ThingsOnShelfGameTaskConfig CurrentGameTask => GetModel<IGame>().CurrentGameTask as ThingsOnShelfGameTaskConfig;
         
-        public int SelectedThingIndex { get; private set; }
+        public bool IsSuccess { get; private set; }
 
         private InitState initState;
         private InputState inputState;
@@ -40,7 +42,7 @@ namespace DemoApp.ThingsOnShelfGame.States
         {
             base.OnStateEnter();
 
-            this.SelectedThingIndex = -1;
+            this.IsSuccess = false;
 
             SwitchState(this.initState);
         }
@@ -57,9 +59,9 @@ namespace DemoApp.ThingsOnShelfGame.States
             
             else if (action is ThingSelectedAction thingSelectedAction)
             {
-                this.SelectedThingIndex = thingSelectedAction.Index;
+                this.IsSuccess = thingSelectedAction.Index == this.CurrentGameTask.CorrectThingIndex;
                 SwitchState(this.resultState);
-                action.SetHandled();                
+                action.SetHandled();
             }
             
             else if (action is TaskResultFinishedAction)
@@ -67,7 +69,15 @@ namespace DemoApp.ThingsOnShelfGame.States
                 SwitchState(this.finishState);
                 action.SetHandled();
             }
+
+            else if (action is TaskViewFinishedAction)
+            {
+                CreateAction<TaskFinishedAction>().WithSuccess(this.IsSuccess).Dispatch();
+                action.SetHandled();
+            }
+            
         }
         
     }
+    
 }

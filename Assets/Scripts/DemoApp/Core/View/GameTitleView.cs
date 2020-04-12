@@ -1,5 +1,4 @@
-﻿using DemoApp.Core.Data;
-using DemoApp.Core.States;
+﻿using DemoApp.Core.States;
 using HSM;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,9 +16,9 @@ namespace DemoApp.Core.View
             this.text.text = "";
         }
 
-        public void EnterGame(GameConfig gameConfig)
+        public void EnterGame()
         {
-            this.text.text = gameConfig.Name;
+            this.text.text = GetModel<IApp>().CurrentGame.Name;
         }
 
         public void ExitGame()

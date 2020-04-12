@@ -55,8 +55,8 @@ namespace DemoApp.Core.States
                 
                 action.SetHandled();
             }
-            
         }
         
     }
+    
 }

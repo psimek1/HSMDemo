@@ -15,7 +15,7 @@ namespace Utils
             this.gameObject.SetActive(false);
         }
 
-        public int IndexInParent
+        protected int IndexInParent
         {
             get
             {

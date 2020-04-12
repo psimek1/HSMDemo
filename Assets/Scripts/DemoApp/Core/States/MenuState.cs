@@ -12,14 +12,14 @@ namespace DemoApp.Core.States
         {
             base.OnStateEnter();
             
-            ForEachViewComponent<IShowMenu>(c => c.ShowMenu());
+            ForEachViewComponent<IEnterMenu>(c => c.EnterMenu());
         }
         
         public override void OnStateExit()
         {
             base.OnStateEnter();
             
-            ForEachViewComponent<IHideMenu>(c => c.HideMenu());
+            ForEachViewComponent<IExitMenu>(c => c.ExitMenu());
         }
         
     }

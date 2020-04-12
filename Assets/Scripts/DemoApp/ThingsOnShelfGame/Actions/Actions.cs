@@ -1,6 +1,6 @@
 ﻿using HSM;
 
-namespace DemoApp.ThingsOnShelfGame
+namespace DemoApp.ThingsOnShelfGame.Actions
 {
 
     public class TaskViewReadyAction : HSMAction

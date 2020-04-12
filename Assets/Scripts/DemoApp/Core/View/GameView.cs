@@ -1,5 +1,4 @@
-﻿using DemoApp.Core.Data;
-using HSM;
+﻿using HSM;
 
 namespace DemoApp.Core.View
 {
@@ -11,7 +10,7 @@ namespace DemoApp.Core.View
             Deactivate();
         }
 
-        public void EnterGame(GameConfig gameConfig)
+        public void EnterGame()
         {
             Activate();
         }

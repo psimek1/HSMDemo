@@ -10,7 +10,6 @@
           <e p="DemoApp" t="Include">
             <e p="Core" t="Include">
               <e p="Actions" t="Include">
-                <e p="GameActions.cs" t="Include" />
                 <e p="MainActions.cs" t="Include" />
                 <e p="MouseSpeechActions.cs" t="Include" />
               </e>
@@ -92,7 +91,6 @@
             <e p="HSMViewRoot.cs" t="Include" />
           </e>
           <e p="Utils" t="Include">
-            <e p="AsyncCallQueue.cs" t="Include" />
             <e p="ViewComponent.cs" t="Include" />
           </e>
         </e>
