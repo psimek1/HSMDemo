@@ -2,44 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62ae0709-7617-41f2-810e-8fe133ea7ae2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HSMDemo/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HSMDemo/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HSMDemo/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HSMDemo/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HSMDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HSMDemo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/DemoApp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DemoApp.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Actions/GameActions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Actions/GameActions.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Actions/MainActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Actions/MainActions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Data/GameConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/Data/GameConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/AppState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/AppState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameMenuState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameMenuState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameTaskState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/GameTaskState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/MenuState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/States/MenuState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/BackButtonView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/BackButtonView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/GameMenuView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/GameMenuView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/GameTaskView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/GameTaskView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/GameTitleView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/GameTitleView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/GameView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/GameView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/HomeButtonView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/HomeButtonView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/MenuItemView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/MenuItemView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/MenuView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/MenuView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/StartTaskButtonView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/StartTaskButtonView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/ViewInterfaces.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/Core/View/ViewInterfaces.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/Actions/Actions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/Actions/Actions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/Data/ThingsOnShelfGameConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/Data/ThingsOnShelfGameConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/FinishState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/FinishState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/InitState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/InitState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/InputState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/InputState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/ResultState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/ResultState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/ThingsOnShelfGameTaskState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/States/ThingsOnShelfGameTaskState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/View/ThingImageView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/View/ThingImageView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/View/ThingsView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/ThingsOnShelfGame/View/ThingsView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/WhatIsDifferentGame/Data/WhatIsDifferentGameConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/WhatIsDifferentGame/Data/WhatIsDifferentGameConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DemoApp/WhatIsDifferentGame/States/WhatIsDifferentGameTaskState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DemoApp/WhatIsDifferentGame/States/WhatIsDifferentGameTaskState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/AsyncCallQueue.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/AsyncCallQueue.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/ViewComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/ViewComponent.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -210,7 +175,7 @@
       <option name="presentableId" value="Default" />
       <updated>1585998905771</updated>
       <workItem from="1585998909238" duration="134657000" />
-      <workItem from="1586537866380" duration="30371000" />
+      <workItem from="1586537866380" duration="30967000" />
     </task>
     <servers />
   </component>
